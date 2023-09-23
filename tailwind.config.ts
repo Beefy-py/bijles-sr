@@ -15,23 +15,40 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        // bee body yellow
         primary: {
-          DEFAULT: "#f97516",
-          "50": "#eff6ff",
-          "100": "#dbeafe",
-          "200": "#bfdbfe",
-          "300": "#93c5fd",
-          "400": "#60a5fa",
-          "500": "#3b82f6",
-          "600": "#2563eb",
-          "700": "#1d4ed8",
-          "800": "#1e40af",
-          "900": "#1e3a8a",
-          "950": "#172554",
+          DEFAULT: "#fccc29",
+          "50": "#ffffff",
+          "100": "#fef8e6",
+          "200": "#fde9bf",
+          "300": "#fcd998",
+          "400": "#fcc871",
+          "500": "#fccc29",
+          "600": "#e3b525",
+          "700": "#b8961f",
+          "800": "#8d761a",
+          "900": "#725f15",
+        },
+        // bee wings
+        secondary: {
+          DEFAULT: "#bbeeee",
+          "50": "#ffffff",
+          "100": "#f1fafa",
+          "200": "#d3f5f5",
+          "300": "#b5f0f0",
+          "400": "#97ebeb",
+          "500": "#bbeeee",
+          "600": "#a2dada",
+          "700": "#89c6c6",
+          "800": "#70b2b2",
+          "900": "#579e9e",
         },
       },
     },
   },
   plugins: [],
 };
+
+export const theme = config.theme?.extend;
+
 export default config;

@@ -8,11 +8,13 @@ import { useDisclosure, useWindowScroll } from "@mantine/hooks";
 import { Burger } from "@mantine/core";
 import ScrollProgressComponent from "./scrollprogress.navbar";
 import { navbarComponent } from "@/utils/content";
+import { theme } from "@tailwindConfig";
 
 const NavbarComponent = () => {
   const [scroll] = useWindowScroll();
   const [opened, { toggle }] = useDisclosure();
   const scrolled = scroll.y > 60;
+  const { colors } = theme as any;
 
   return (
     <header
@@ -34,6 +36,7 @@ const NavbarComponent = () => {
               href="/hello"
               variant="light"
               rightSection={<IconLogin size={16} />}
+              color={colors.primary.DEFAULT}
             >
               In Loggen
             </Button>
@@ -41,7 +44,11 @@ const NavbarComponent = () => {
               component={Link}
               href="/hello"
               variant="gradient"
-              gradient={{ from: "blue", to: "cyan", deg: 90 }}
+              gradient={{
+                from: colors.secondary.DEFAULT,
+                to: colors.secondary["800"],
+                deg: 90,
+              }}
             >
               Beginnen
             </Button>
@@ -61,7 +68,7 @@ const NavbarComponent = () => {
                 <li key={index + link.name}>
                   <Link
                     href={"/" + link.path}
-                    className="block py-2 pr-4 pl-3 text-gray-800 rounded bg-primary-700 lg:bg-transparent hover:text-primary-700 lg:p-0"
+                    className="block py-2 pr-4 pl-3 text-gray-800 hover:text-primary-600 lg:p-0 transition"
                     aria-current="page"
                   >
                     {link.name}
