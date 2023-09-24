@@ -10,13 +10,10 @@ const HeroComponent = () => {
       <div className="grid py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-7">
           <h1 className="mb-4 text-2xl font-bold tracking-tight leading-none md:text-4xl lg:text-5xl xl:text-6xl">
-            Gratis Rekenbijles voor Surinaamse Leerlingen
+            {heroComponent.title}
           </h1>
           <p className="mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">
-            Samen met De Molen N.V. zorgen wij van Bijles.sr ervoor, dat alle
-            Surinaamse leerlingen op GLO niveau gratis rekenbijles kunnen
-            volgen. In de tussentijd breiden wij ons lesmateriaal uit ter
-            voorbereiding op het nieuw schooljaar.
+            {heroComponent.subTitle}
           </p>
           <Group className="w-full" justify="start" gap="sm">
             <Button
@@ -27,7 +24,7 @@ const HeroComponent = () => {
               href="/hello"
               className="group !bg-primary z-0 hover:bg-orange-700 transition"
             >
-              Next link button
+              {heroComponent.ctaText}
             </Button>
           </Group>
         </div>

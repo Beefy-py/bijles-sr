@@ -32,10 +32,17 @@ export const navbarComponent = {
 };
 
 export const heroComponent = {
-  title: "",
-  subTitle: "",
-  ctaText1: "",
-  ctaText2: "",
+  title: "1x24uur Rekenbijlessen",
+  subTitle: ` Samen met De Molen N.V. zorgen wij van Bijles.sr ervoor, dat alle
+            Surinaamse leerlingen op GLO niveau gratis rekenbijles kunnen
+            volgen. In de tussentijd breiden wij ons lesmateriaal uit ter
+            voorbereiding op het nieuw schooljaar.`,
+  ctaText: "Bekijk de Lessen",
+  imageSlider: [
+    { src: "/assets/images/education.png", title: "First Image" },
+    { src: "/assets/images/educator.png", title: "Second Image" },
+    { src: "/assets/images/graduation.png", title: "Third Image" },
+  ],
 };
 
 export const featuresComponent = {
