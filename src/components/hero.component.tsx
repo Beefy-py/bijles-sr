@@ -1,10 +1,24 @@
+"use client";
+
 import { Button, Group } from "@mantine/core";
-import Image from "next/image";
+import { useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
+import { Carousel } from "@mantine/carousel";
 import Link from "next/link";
 import React from "react";
-import { IconArrowBigRightLine } from "@tabler/icons-react";
+import {
+  IconArrowBigLeftFilled,
+  IconArrowBigRightFilled,
+  IconArrowBigRightLine,
+} from "@tabler/icons-react";
+import { theme } from "@tailwindConfig";
+import { Image } from "@mantine/core";
+import { heroComponent } from "@/utils/content";
 
 const HeroComponent = () => {
+  const autoplay = useRef(Autoplay({ delay: 2000 }));
+  const { colors } = theme as any;
+
   return (
     <section id="home" className="sm:my-16 lg:my-28">
       <div className="grid py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
@@ -22,19 +36,38 @@ const HeroComponent = () => {
               }
               component={Link}
               href="/hello"
-              className="group !bg-primary z-0 hover:bg-orange-700 transition"
+              className="group !bg-primary z-0 transition"
             >
               {heroComponent.ctaText}
             </Button>
           </Group>
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 md:flex">
-          <Image
-            src="/assets/images/educator.png"
-            alt="mockup"
-            width={700}
-            height={700}
-          />
+          <Carousel
+            loop
+            plugins={[autoplay.current]}
+            onMouseEnter={autoplay.current.stop}
+            onMouseLeave={autoplay.current.reset}
+            className="hero-slider w-full h-full"
+            styles={{
+              indicator: {
+                background: colors.secondary.DEFAULT,
+              },
+            }}
+            height={"100%"}
+            nextControlIcon={
+              <IconArrowBigRightFilled className="text-secondary" />
+            }
+            previousControlIcon={
+              <IconArrowBigLeftFilled className="text-secondary" />
+            }
+          >
+            {heroComponent.imageSlider.map((img, index) => (
+              <Carousel.Slide key={index + img.title}>
+                <Image src={img.src} alt={img.title} />
+              </Carousel.Slide>
+            ))}
+          </Carousel>
         </div>
       </div>
     </section>

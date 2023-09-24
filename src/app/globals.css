@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero-slider .mantine-Carousel-controls {
+  transition: opacity 150ms ease;
+  opacity: 0;
+}
+
+.hero-slider:hover .mantine-Carousel-controls {
+  opacity: 1;
+}

@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import "@mantine/core/styles.css";
+import "@mantine/carousel/styles.css";
 import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import { Inter } from "next/font/google";
 import ScrollComponent from "@/components/scroll.component";
