@@ -9,11 +9,12 @@ import { Burger } from "@mantine/core";
 import ScrollProgressComponent from "./scrollprogress.navbar";
 import { navbarComponent } from "@/utils/content";
 import { theme } from "@tailwindConfig";
+import Image from "next/image";
 
 const NavbarComponent = () => {
   const [scroll] = useWindowScroll();
   const [opened, { toggle }] = useDisclosure();
-  const scrolled = scroll.y > 60;
+  const scrolled = scroll.y > 40;
   const { colors } = theme as any;
 
   return (
@@ -24,11 +25,8 @@ const NavbarComponent = () => {
     >
       <nav className={`py-2.5 max-w-screen-2xl mx-auto px-5 lg:px-10 xl:px-20`}>
         <div className={`flex flex-wrap justify-between items-center mx-auto`}>
-          <Link href="/" className="flex items-center text-primary">
-            <IconBooks className="w-6 mr-1" />
-            <Text fw={600} className="self-center text-xl whitespace-nowrap">
-              Bijles SR
-            </Text>
+          <Link href="/" className="flex w-12 h-12 relative">
+            <Image src={navbarComponent.logo} alt="Bijles SR Logo" fill />
           </Link>
           <div className="flex items-center lg:order-2 gap-2">
             <Button
@@ -37,8 +35,9 @@ const NavbarComponent = () => {
               variant="light"
               rightSection={<IconLogin size={16} />}
               color={colors.primary.DEFAULT}
+              className="!text-primary-900"
             >
-              In Loggen
+              {navbarComponent.ctaText1}
             </Button>
             <Button
               component={Link}
@@ -49,8 +48,9 @@ const NavbarComponent = () => {
                 to: colors.secondary["800"],
                 deg: 90,
               }}
+              // className="!text-secondary-900"
             >
-              Beginnen
+              {navbarComponent.ctaText2}
             </Button>
             <Burger
               opened={opened}

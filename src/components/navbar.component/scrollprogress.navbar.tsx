@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { IconMath, IconPlusEqual } from "@tabler/icons-react";
-import { theme} from "@tailwindConfig";
+import { theme } from "@tailwindConfig";
 
 type Props = { scrolled: boolean };
 
@@ -12,7 +12,7 @@ const ScrollProgressComponent = ({ scrolled }: Props) => {
     damping: 30,
     restDelta: 0.001,
   });
-  const {colors} = theme as any;
+  const { colors } = theme as any;
 
   // Calculate the icon's position based on the scroll progress
   const iconPosition = useTransform(scaleX, (value) => `${value * 100}%`);
@@ -44,7 +44,11 @@ const ScrollProgressComponent = ({ scrolled }: Props) => {
         }}
       />
       <motion.div style={{ position: "absolute", left: iconPosition }}>
-        <IconMath className="bg-primary p-1 rounded-full w-6 h-6 text-white" />{" "}
+        <IconMath
+          className={`bg-primary p-1 rounded-full text-white transition ${
+            scrolled ? "w-6 h-6 opacity-100" : "w-0 h-0 opacity-0"
+          }`}
+        />{" "}
         {/* replace with your actual Icon component */}
       </motion.div>
     </div>

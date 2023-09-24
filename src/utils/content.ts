@@ -11,9 +11,12 @@ import {
 } from "@/icons";
 
 export const navbarComponent = {
+  logo: "/assets/images/logo.png",
+  ctaText1: "In Loggen",
+  ctaText2: "Registreren",
   links: [
     {
-      name: "Thuis",
+      name: "Home",
       path: "#home",
     },
     {
