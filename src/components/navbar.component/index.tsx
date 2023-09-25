@@ -42,13 +42,8 @@ const NavbarComponent = () => {
             <Button
               component={Link}
               href="/hello"
-              variant="gradient"
-              gradient={{
-                from: colors.secondary.DEFAULT,
-                to: colors.secondary["800"],
-                deg: 90,
-              }}
-              // className="!text-secondary-900"
+              color={colors.tertiary["300"]}
+              className="!text-tertiary-900"
             >
               {navbarComponent.ctaText2}
             </Button>
