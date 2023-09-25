@@ -81,6 +81,9 @@ export const coursesComponent = {
       description: "",
       reviews: "",
       rating: 3,
+      totalLessons: 23,
+      summary:
+        "Sit amet nulla facilisi morbi tempus iaculis. Ac ut consequat semper viverra nam libero justo.",
     },
     {
       image: "/assets/images/education.png",
@@ -90,6 +93,9 @@ export const coursesComponent = {
       description: "",
       reviews: "",
       rating: 4,
+      totalLessons: 13,
+      summary:
+        "Et ligula ullamcorper malesuada proin libero nunc consequat interdum varius. ",
     },
     {
       image: "/assets/images/education.png",
@@ -99,6 +105,8 @@ export const coursesComponent = {
       description: "",
       reviews: "",
       rating: 3,
+      totalLessons: 35,
+      summary: "Fames ac turpis egestas sed tempus urna et.",
     },
     {
       image: "/assets/images/education.png",
@@ -108,6 +116,9 @@ export const coursesComponent = {
       description: "",
       reviews: "",
       rating: 4.5,
+      totalLessons: 21,
+      summary:
+        "Lorem mollis aliquam ut porttitor. Eget nulla facilisi etiam dignissim diam quis enim.",
     },
     {
       image: "/assets/images/education.png",
@@ -117,6 +128,9 @@ export const coursesComponent = {
       description: "",
       reviews: "",
       rating: 2.5,
+      totalLessons: 50,
+      summary:
+        "Tellus in hac habitasse platea dictumst vestibulum rhoncus est.",
     },
     {
       image: "/assets/images/education.png",
@@ -126,6 +140,9 @@ export const coursesComponent = {
       description: "",
       reviews: "",
       rating: 5,
+      totalLessons: 42,
+      summary:
+        "Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.",
     },
   ],
 };
