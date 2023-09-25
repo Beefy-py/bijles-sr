@@ -1,9 +1,11 @@
 import { featuresComponent } from "@/utils/content";
 import { Button } from "@mantine/core";
 import { IconArrowBigRightLines } from "@tabler/icons-react";
+import { theme } from "@tailwindConfig";
 import React from "react";
 
 const FeaturesComponent = () => {
+  const { colors } = theme as any;
   return (
     <section id="features" className="bg-white sm:py-16 lg:py-28">
       <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
@@ -33,6 +35,7 @@ const FeaturesComponent = () => {
                     className="group-hover/btn:translate-x-1 transition"
                   />
                 }
+                color={colors.tertiary.DEFAULT}
               >
                 Meer Info
               </Button>

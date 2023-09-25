@@ -52,7 +52,7 @@ export const featuresComponent = {
   features: [
     {
       icon: (className: string) => bulb(className),
-      title: "Creative Gedachten",
+      title: "1x24 uur Lessen",
       description:
         "Lorem sed risus ultricies tristique nulla. Id cursus metus aliquam eleifend mi in nulla. Ipsum consequat nisl vel pretium lectus quam id leo in.",
     },
@@ -64,7 +64,7 @@ export const featuresComponent = {
     },
     {
       icon: (className: string) => school(className),
-      title: "Exclusieve Coach",
+      title: "Educatieve spelletjes ",
       description:
         "Sed vulputate odio ut enim blandit volutpat maecenas volutpat. Suspendisse faucibus interdum posuere lorem ipsum. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices.",
     },
