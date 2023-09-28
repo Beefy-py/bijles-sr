@@ -11,9 +11,9 @@ const FooterComponent = () => {
       <div className="mx-auto max-w-screen-xl px-5 lg:px-10 xl:px-20">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <Link href="/" className="flex w-12 h-12 relative">
+            <Link href="/" className="flex w-14 h-14 relative">
               <Image
-                className="grayscale"
+                className=""
                 src={footerComponent.logo}
                 alt="Bijles SR Logo"
                 fill
