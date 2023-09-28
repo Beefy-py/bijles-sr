@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Group } from "@mantine/core";
+import { Button, Container, Group, Overlay, Text, Title } from "@mantine/core";
 import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel } from "@mantine/carousel";
@@ -14,61 +14,59 @@ import {
 import { theme } from "@tailwindConfig";
 import { Image } from "@mantine/core";
 import { heroComponent } from "@/utils/content";
+import classes from "@/styles/HeroComponent.module.css";
 
 const HeroComponent = () => {
-  const autoplay = useRef(Autoplay({ delay: 2000 }));
+  const autoplay = useRef(Autoplay({ delay: 5000 }));
   const { colors } = theme as any;
 
   return (
-    <section id="home" className="sm:my-16 lg:my-28">
-      <div className="grid py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16">
-       <div className="">
-          <Carousel
-            loop
-            plugins={[autoplay.current]}
-            onMouseEnter={autoplay.current.stop}
-            onMouseLeave={autoplay.current.reset}
-            className="hero-slider w-full h-full"
-            styles={{
-              indicator: {
-                background: colors.secondary.DEFAULT,
-              },
-            }}
-            height={"100%"}
-            nextControlIcon={
-              <IconArrowBigRightFilled className="text-secondary" />
-            }
-            previousControlIcon={
-              <IconArrowBigLeftFilled className="text-secondary" />
-            }
-          >
-            {heroComponent.imageSlider.map((img, index) => (
-              <Carousel.Slide key={index + img.title}>
-                <Image src={img.src} alt={img.title} />
-              </Carousel.Slide>
-            ))}
-          </Carousel>
-        </div>  <div className="place-self-center">
-          <h1 className="mb-4 text-2xl font-bold tracking-tight leading-none md:text-4xl lg:text-5xl xl:text-6xl">
-            {heroComponent.title}
-          </h1>
-          <p className="mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">
+    <section
+      id="home"
+      className="mb-8 sm:mb-16 lg:mb-28  -mx-5 lg:-mx-10 xl:-mx-20 relative"
+    >
+      <div className={`${classes.hero} px-5 lg:px-10 xl:px-20`}>
+        <Carousel
+          loop
+          plugins={[autoplay.current]}
+          className="hero-slider w-full h-full !absolute"
+          styles={{
+            indicator: {
+              background: colors.secondary.DEFAULT,
+            },
+          }}
+          height={"100%"}
+          withControls={false}
+        >
+          {heroComponent.imageSlider.map((img, index) => (
+            <Carousel.Slide key={index + img.title}>
+              <Image src={img.src} alt={img.title} />
+            </Carousel.Slide>
+          ))}
+        </Carousel>
+        <Overlay
+          gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, .65) 40%)"
+          opacity={1}
+          zIndex={0}
+        />
+        <Container className={`${classes.container} md:w-1/2`} size="md">
+          <Title className={classes.title}>{heroComponent.title}</Title>
+          <Text className={classes.description} size="xl" mt="xl">
             {heroComponent.subTitle}
-          </p>
-          <Group className="w-full" justify="start" gap="sm">
-            <Button
-              rightSection={
-                <IconArrowBigRightLine className="group-hover:translate-x-1 transition" />
-              }
-              component={Link}
-              href="/hello"
-              className="group !bg-primary z-0 transition"
-            >
-              {heroComponent.ctaText}
-            </Button>
-          </Group>
-        </div>
-       
+          </Text>
+          <Button
+            rightSection={
+              <IconArrowBigRightLine className="group-hover:translate-x-1 transition" />
+            }
+            component={Link}
+            href="/hello"
+            className="mt-2 group z-0 transition"
+            variant="outline"
+            color={colors.primary.DEFAULT}
+          >
+            {heroComponent.ctaText}
+          </Button>
+        </Container>
       </div>
     </section>
   );
