@@ -1,5 +1,7 @@
+import { footerComponent } from "@/utils/content";
 import { Text } from "@mantine/core";
 import { IconBooks } from "@tabler/icons-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -9,11 +11,13 @@ const FooterComponent = () => {
       <div className="mx-auto max-w-screen-xl px-5 lg:px-10 xl:px-20">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <Link href="/" className="flex items-center">
-              <IconBooks className="w-8 mr-1" />
-              <Text className="self-center text-2xl font-semibold whitespace-nowrap">
-                Bijles Sr
-              </Text>
+            <Link href="/" className="flex w-12 h-12 relative">
+              <Image
+                className="grayscale"
+                src={footerComponent.logo}
+                alt="Bijles SR Logo"
+                fill
+              />
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">

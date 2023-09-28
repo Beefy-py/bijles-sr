@@ -147,6 +147,10 @@ export const coursesComponent = {
   ],
 };
 
+export const footerComponent = {
+  logo: navbarComponent.logo,
+};
+
 export const notFoundComponent = {
   title: "Title1",
   subTitle: "",
