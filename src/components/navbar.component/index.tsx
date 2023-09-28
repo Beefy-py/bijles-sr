@@ -25,7 +25,7 @@ const NavbarComponent = () => {
     >
       <nav className={`py-2.5 max-w-screen-2xl mx-auto px-5 lg:px-10 xl:px-20`}>
         <div className={`flex flex-wrap justify-between items-center mx-auto`}>
-          <Link href="/" className="flex w-12 h-12 relative">
+          <Link href="/" className="flex w-16 h-16 relative">
             <Image src={navbarComponent.logo} alt="Bijles SR Logo" fill />
           </Link>
           <div className="flex items-center lg:order-2 gap-2">
