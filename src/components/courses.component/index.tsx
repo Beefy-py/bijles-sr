@@ -1,64 +1,15 @@
+"use client";
+
 import { coursesComponent } from "@/utils/content";
-import {
-  Group,
-  Modal,
-  Rating,
-  Card,
-  Image,
-  Text,
-  Badge,
-  Button,
-  Title,
-} from "@mantine/core";
-import { IconAlarm, IconSchool, IconUser } from "@tabler/icons-react";
-import Link from "next/link";
-import CourseCardImageCourseComponent from "./course-card-image.course";
-import { theme } from "@tailwindConfig";
+import CourseCardComponent from "./course-card.course";
 
 const CoursesComponent = () => {
-  const { colors } = theme as any;
   return (
     <>
       <section id="courses" className="bg-white sm:py-16 lg:py-28">
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {coursesComponent.courses.map((course, index) => (
-            <Card
-              key={index + course.title}
-              radius="md"
-              className="w-full cursor-pointer"
-            >
-              {/* <CourseCardImageCourseComponent /> */}
-              <Title>{course.title}</Title>
-
-              <Group justify="space-between" mt="md" mb="xs">
-                <Group>
-                  <div>Beoordeling:</div>
-                  <Rating fractions={4} value={course.rating} readOnly />
-                </Group>
-                <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded">
-                  <IconSchool className="w-4 h-4 mr-1" />
-                  {course.durationInHours} uren
-                </span>
-              </Group>
-
-              <Text size="sm" c="dimmed">
-                {course.summary}
-              </Text>
-
-              <Group mt="md" gap="sm" grow>
-                <Button variant="default" color={colors.tertiary.DEFAULT}>
-                  Bekijk Intro
-                </Button>
-                <Button
-                  component={Link}
-                  href={`/courses/${course.title.toLowerCase()}`}
-                  variant="light"
-                  color={colors.tertiary.DEFAULT}
-                >
-                  Meer Info
-                </Button>
-              </Group>
-            </Card>
+            <CourseCardComponent key={index + course.title} course={course} />
           ))}
         </div>
       </section>
