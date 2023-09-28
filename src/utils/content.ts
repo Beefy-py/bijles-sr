@@ -42,9 +42,9 @@ export const heroComponent = {
             voorbereiding op het nieuw schooljaar.`,
   ctaText: "Bekijk de Lessen",
   imageSlider: [
-    { src: "/assets/images/education.png", title: "First Image" },
-    { src: "/assets/images/educator.png", title: "Second Image" },
-    { src: "/assets/images/graduation.png", title: "Third Image" },
+    { src: "/assets/images/studying-kid0.jpg", title: "First Image" },
+    { src: "/assets/images/studying-kid1.jpg", title: "Second Image" },
+    { src: "/assets/images/studying-kid2.jpg", title: "Third Image" },
   ],
 };
 
