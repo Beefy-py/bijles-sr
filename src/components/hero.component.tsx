@@ -25,7 +25,7 @@ const HeroComponent = () => {
       id="home"
       className="mb-8 sm:mb-16 lg:mb-28  -mx-5 lg:-mx-10 xl:-mx-20 relative"
     >
-      <div className={`${classes.hero} px-5 lg:px-10 xl:px-20`}>
+      <div className={`${classes.hero}`}>
         <Carousel
           loop
           plugins={[autoplay.current]}
