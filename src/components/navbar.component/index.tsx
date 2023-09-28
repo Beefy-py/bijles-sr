@@ -15,6 +15,7 @@ const NavbarComponent = () => {
   const [scroll] = useWindowScroll();
   const [opened, { toggle }] = useDisclosure();
   const scrolled = scroll.y > 40;
+  const textInvert = (670 < scroll.y && scroll.y < 930) || scroll.y < 100;
   const { colors } = theme as any;
 
   return (
@@ -35,7 +36,9 @@ const NavbarComponent = () => {
               variant="light"
               rightSection={<IconLogin size={16} />}
               color={colors.primary.DEFAULT}
-              className="!text-primary-900"
+              className={`${
+                !textInvert ? "!text-primary-100" : "!text-primary-900"
+              }`}
             >
               {navbarComponent.ctaText1}
             </Button>
@@ -63,7 +66,9 @@ const NavbarComponent = () => {
                 <li key={index + link.name}>
                   <Link
                     href={"/" + link.path}
-                    className="block py-2 pr-4 pl-3 text-gray-800 hover:text-primary-600 lg:p-0 transition"
+                    className={`block py-2 pr-4 pl-3 ${
+                      !textInvert ? "text-gray-100" : "text-gray-800"
+                    } hover:text-primary-600 lg:p-0 transition`}
                     aria-current="page"
                   >
                     {link.name}
