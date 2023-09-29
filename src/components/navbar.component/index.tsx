@@ -15,16 +15,16 @@ const NavbarComponent = () => {
   const [scroll] = useWindowScroll();
   const [opened, { toggle }] = useDisclosure();
   const scrolled = scroll.y > 40;
-  const textInvert = (670 < scroll.y && scroll.y < 930) || scroll.y < 100;
+  // const textInvert = (670 < scroll.y && scroll.y < 930) || scroll.y < 100;
   const { colors } = theme as any;
 
   return (
-    <header
-      className={`w-full z-20 ${
-        scrolled ? "sticky top-0 backdrop-blur-xl" : ""
-      }`}
-    >
-      <nav className={`py-2.5 max-w-screen-2xl mx-auto px-5 lg:px-10 xl:px-20`}>
+    <header className={`w-full z-20 fixed top-0`}>
+      <nav
+        className={`py-2.5 ${
+          scrolled ? "bg-secondary-700 py-1" : ""
+        } transition duration-500 max-w-screen-2xl mx-auto px-5 lg:px-10 xl:px-20`}
+      >
         <div className={`flex flex-wrap justify-between items-center mx-auto`}>
           <Link href="/" className="flex w-16 h-16 relative">
             <Image src={navbarComponent.logo} alt="Bijles SR Logo" fill />
@@ -36,9 +36,7 @@ const NavbarComponent = () => {
               variant="light"
               rightSection={<IconLogin size={16} />}
               color={colors.primary.DEFAULT}
-              className={`${
-                !textInvert ? "!text-primary-100" : "!text-primary-900"
-              }`}
+              className={`!text-primary-900`}
             >
               {navbarComponent.ctaText1}
             </Button>
@@ -66,9 +64,7 @@ const NavbarComponent = () => {
                 <li key={index + link.name}>
                   <Link
                     href={"/" + link.path}
-                    className={`block py-2 pr-4 pl-3 ${
-                      !textInvert ? "text-gray-100" : "text-gray-800"
-                    } hover:text-primary-600 lg:p-0 transition`}
+                    className={`block py-2 pr-4 pl-3"text-gray-800 hover:text-primary-600 lg:p-0 transition`}
                     aria-current="page"
                   >
                     {link.name}

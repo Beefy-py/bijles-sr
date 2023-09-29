@@ -1,6 +1,5 @@
 "use client";
 
-import { Button, Container, Group, Overlay, Text, Title } from "@mantine/core";
 import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel } from "@mantine/carousel";
@@ -12,7 +11,7 @@ import {
   IconArrowBigRightLine,
 } from "@tabler/icons-react";
 import { theme } from "@tailwindConfig";
-import { Image } from "@mantine/core";
+import { Image, Button, Text, Title } from "@mantine/core";
 import { heroComponent } from "@/utils/content";
 import classes from "@/styles/HeroComponent.module.css";
 
@@ -23,50 +22,61 @@ const HeroComponent = () => {
   return (
     <section
       id="home"
-      className="mb-8 sm:mb-16 lg:mb-28  -mx-5 lg:-mx-10 xl:-mx-20 relative"
+      className="mb-8 sm:mb-16 lg:mb-28 -mx-5 lg:-mx-10 xl:-mx-20 relative bg-secondary"
     >
-      <div className={`${classes.hero}`}>
-        <Carousel
-          loop
-          plugins={[autoplay.current]}
-          className="hero-slider w-full h-full !absolute"
-          styles={{
-            indicator: {
-              background: colors.secondary.DEFAULT,
-            },
-          }}
-          height={"100%"}
-          withControls={false}
-        >
-          {heroComponent.imageSlider.map((img, index) => (
-            <Carousel.Slide key={index + img.title}>
-              <Image src={img.src} alt={img.title} />
-            </Carousel.Slide>
-          ))}
-        </Carousel>
-        <Overlay
-          gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, .65) 40%)"
-          opacity={1}
-          zIndex={0}
-        />
-        <Container className={`${classes.container} md:w-1/2`} size="md">
-          <Title className={classes.title}>{heroComponent.title}</Title>
-          <Text className={classes.description} size="xl" mt="xl">
-            {heroComponent.subTitle}
-          </Text>
-          <Button
-            rightSection={
-              <IconArrowBigRightLine className="group-hover:translate-x-1 transition" />
-            }
-            component={Link}
-            href="/hello"
-            className="mt-2 group z-0 transition"
-            variant="outline"
-            color={colors.primary.DEFAULT}
+      <div
+        className={`${classes.hero} grid grid-cols-12 px-5 lg:px-10 xl:px-20 items-center gap-20`}
+      >
+        <div className="left col-span-6">
+          {" "}
+          <div className={`${classes.container}`}>
+            <Title className={classes.title}>{heroComponent.title}</Title>
+            <Text className={classes.description} size="xl" mt="xl">
+              {heroComponent.subTitle}
+            </Text>
+            <Button
+              rightSection={
+                <IconArrowBigRightLine className="group-hover:translate-x-1 transition" />
+              }
+              component={Link}
+              href="/hello"
+              className="mt-2 group z-0 transition"
+              variant="filled"
+              color={colors.primary.DEFAULT}
+            >
+              {heroComponent.ctaText}
+            </Button>
+          </div>
+        </div>
+        <div className="right h-full p-6 col-span-6 flex items-center justify-center">
+          <Carousel
+            loop
+            plugins={[autoplay.current]}
+            className="hero-slider"
+            styles={{
+              // slide: {
+              //   borderRadius: "20%",
+              //   // width: "40vw",
+              //   // height: "40vh",
+              // },
+              // container: {
+              //   borderRadius: "50%",
+              // },
+              viewport: {
+                borderRadius: "50%",
+                width: "40vw",
+                height: "40vh",
+              },
+            }}
+            withControls={false}
           >
-            {heroComponent.ctaText}
-          </Button>
-        </Container>
+            {heroComponent.imageSlider.map((img, index) => (
+              <Carousel.Slide key={index + img.title}>
+                <Image src={img.src} alt={img.title} />
+              </Carousel.Slide>
+            ))}
+          </Carousel>
+        </div>
       </div>
     </section>
   );
