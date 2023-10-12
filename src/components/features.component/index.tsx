@@ -13,7 +13,7 @@ const FeaturesComponent = () => {
           return (
             <div
               key={index + feat.title}
-              className="group/card border rounded-lg bg-gray-50 border-gray-200 p-10 hover:border-primary transition flex flex-col justify-between items-start"
+              className="group/card border z-10 rounded-lg bg-gray-50 border-gray-200 p-10 hover:border-primary transition flex flex-col justify-between items-start"
             >
               <div className="content">
                 <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 group-hover/card:bg-primary/20 transition">
