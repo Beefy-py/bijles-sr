@@ -35,7 +35,7 @@ const HeroComponent = () => {
         }}
       />
       <motion.svg
-        className="absolute -right-20 bottom-0 z-2 w-[30rem] h-[30rem] fill-secondary-700"
+        className="absolute right-0 bottom-0 z-2 w-[30rem] h-[30rem] fill-secondary-700"
         viewBox="0 0 1000 1000"
         xmlns="http://www.w3.org/2000/svg"
       >
