@@ -34,11 +34,43 @@ const HeroComponent = () => {
           borderRadius: "50%",
         }}
       />
-
+      <motion.svg
+        className="absolute -right-20 bottom-0 z-2 w-[30rem] h-[30rem] fill-secondary-700"
+        viewBox="0 0 1000 1000"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <clipPath id="a">
+            <path
+              fill="currentColor"
+              d="M952.5 647Q905 794 780 885t-280 91q-155 0-280-91T47.5 647Q0 500 47.5 353T220 115q125-91 280-91t280 91q125 91 172.5 238t0 294Z"
+            />
+          </clipPath>
+          <pattern
+            id="b"
+            patternUnits="userSpaceOnUse"
+            width="25"
+            height="25"
+            viewBox="0 0 100 100"
+          >
+            <circle cx="50" cy="50" r="12.5" />
+          </pattern>
+        </defs>
+        <g clip-path="url(#a)">
+          <path
+            fill="url(#b)"
+            d="M952.5 647Q905 794 780 885t-280 91q-155 0-280-91T47.5 647Q0 500 47.5 353T220 115q125-91 280-91t280 91q125 91 172.5 238t0 294Z"
+          />
+        </g>
+      </motion.svg>
       <div
         className={`${classes.hero} grid grid-cols-12 py-20 px-5 lg:px-10 xl:px-20 items-center gap-20`}
       >
-        <div className="left col-span-6">
+        <motion.div
+          initial={{ x: -1000 }}
+          animate={{ x: 0 }}
+          className="left col-span-6"
+        >
           <div className={`${classes.container}`}>
             <Title className={classes.title}>{heroComponent.title}</Title>
             <Text className={classes.description} size="xl" mt="xl">
@@ -57,8 +89,47 @@ const HeroComponent = () => {
               {heroComponent.ctaText}
             </Button>{" "}
           </div>
-        </div>
-        <div className="right h-full p-6 col-span-6 flex items-center justify-center">
+        </motion.div>
+        <div
+          data-aos="fade-up-left"
+          className="right h-full p-6 col-span-6 flex items-center justify-center relative"
+        >
+          <motion.div
+            className="box absolute right-10 bottom-40 z-20 w-16 h-16 opacity-70"
+            animate={{ scale: [1, 1.1, 1], x: [0, 15, 0] }}
+            transition={{
+              repeat: Infinity,
+              type: "tween",
+              duration: 4,
+              delay: 0.5,
+            }}
+          >
+            {" "}
+            <Image
+              src={"/assets/images/equal-sign.png"}
+              alt="plus symbol image"
+              width={30}
+              height={30}
+            />{" "}
+          </motion.div>{" "}
+          <motion.div
+            className="box absolute right-0 bottom-0 z-20 w-24 h-24 opacity-70"
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{
+              repeat: Infinity,
+              type: "tween",
+              duration: 3,
+              delay: 2,
+            }}
+          >
+            {" "}
+            <Image
+              src={"/assets/images/plus-math.png"}
+              alt="plus symbol image"
+              width={30}
+              height={30}
+            />{" "}
+          </motion.div>
           <Carousel
             loop
             plugins={[autoplay.current]}
@@ -86,7 +157,6 @@ const HeroComponent = () => {
           </Carousel>
         </div>
       </div>
-
       <svg
         className="absolute"
         xmlns="http://www.w3.org/2000/svg"

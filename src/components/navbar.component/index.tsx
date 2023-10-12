@@ -10,6 +10,7 @@ import ScrollProgressComponent from "./scrollprogress.navbar";
 import { navbarComponent } from "@/utils/content";
 import { theme } from "@tailwindConfig";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const NavbarComponent = () => {
   const [scroll] = useWindowScroll();
@@ -19,8 +20,12 @@ const NavbarComponent = () => {
   const { colors } = theme as any;
 
   return (
-    <header className={`w-full z-20 fixed top-0`}>
-      <nav
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`w-full z-20 fixed top-0`}
+    >
+      <motion.nav
         className={`py-2.5 ${
           scrolled ? "bg-secondary-700 py-1" : ""
         } transition duration-500 max-w-screen-2xl mx-auto px-5 lg:px-10 xl:px-20`}
@@ -74,9 +79,9 @@ const NavbarComponent = () => {
             </ul>
           </div>
         </div>
-      </nav>
+      </motion.nav>
       <ScrollProgressComponent scrolled={scrolled} />
-    </header>
+    </motion.header>
   );
 };
 
