@@ -20,17 +20,26 @@ import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 
 type Props = {
   course: any;
+  courseIndex: number;
 };
 
-const CourseCardComponent = ({ course }: Props) => {
+const CourseCardComponent = ({ course, courseIndex }: Props) => {
   const { colors } = theme as any;
   const [opened, { open, close }] = useDisclosure(false);
 
   return (
     <>
-      <Card radius="md" className="w-full cursor-pointer">
+      <Card
+        withBorder
+        data-aos="fade-up"
+        data-aos-delay={courseIndex * 200}
+        radius="md"
+        className="w-full cursor-pointer hover:!border-secondary-800 !border transition group"
+      >
         {/* <CourseCardImageCourseComponent /> */}
-        <Title>{course.title}</Title>
+        <Title className="group-hover:!text-secondary-800 transition">
+          {course.title}
+        </Title>
 
         <Group justify="space-between" mt="md" mb="xs">
           <Group>
