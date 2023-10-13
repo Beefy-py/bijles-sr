@@ -3,11 +3,16 @@ import { Text } from "@mantine/core";
 import { IconBooks } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import React from "react";
 
 const FooterComponent = () => {
   return (
-    <footer className="bg-white w-full">
+    <motion.footer
+      initial={{ x: -400 }}
+      whileInView={{ x: 0 }}
+      className="bg-white w-full"
+    >
       <div className="mx-auto max-w-screen-xl px-5 lg:px-10 xl:px-20">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -133,7 +138,7 @@ const FooterComponent = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
