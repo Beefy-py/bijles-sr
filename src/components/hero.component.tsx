@@ -21,6 +21,21 @@ const HeroComponent = () => {
       id="home"
       className="mb-8 sm:mb-16 lg:mb-28 -mx-5 lg:-mx-10 xl:-mx-20 relative bg-secondary"
     >
+      <div className="box absolute left-32 top-32 z-20 w-24 h-24 opacity-70">
+        <motion.img
+          animate={{ scale: [1, 1.1, 1], y: [0, -15, 0] }}
+          transition={{
+            repeat: Infinity,
+            type: "tween",
+            duration: 3,
+            delay: 0.8,
+          }}
+          src={"/assets/images/percentage.png"}
+          alt="plus symbol image"
+          width={80}
+          height={80}
+        />{" "}
+      </div>
       <motion.div
         className="absolute -left-1/4 -top-1/4 z-2 bg-secondary-400 w-[50rem] h-[50rem] opacity-70"
         animate={{ scale: [1, 1.05, 1] }}
@@ -104,7 +119,6 @@ const HeroComponent = () => {
               delay: 0.5,
             }}
           >
-            {" "}
             <Image
               src={"/assets/images/equal-sign.png"}
               alt="plus symbol image"
@@ -112,24 +126,21 @@ const HeroComponent = () => {
               height={30}
             />{" "}
           </motion.div>{" "}
-          <motion.div
-            className="box absolute right-0 bottom-0 z-20 w-24 h-24 opacity-70"
-            animate={{ scale: [1, 1.2, 1] }}
-            transition={{
-              repeat: Infinity,
-              type: "tween",
-              duration: 3,
-              delay: 2,
-            }}
-          >
-            {" "}
-            <Image
+          <div className="box absolute right-32 -bottom-32 z-20 w-24 h-24 opacity-70">
+            <motion.img
+              animate={{ rotate: [0, 45, 0] }}
+              transition={{
+                repeat: Infinity,
+                type: "tween",
+                duration: 1.5,
+                delay: 0.5,
+              }}
               src={"/assets/images/plus-math.png"}
               alt="plus symbol image"
-              width={30}
-              height={30}
+              width={80}
+              height={80}
             />{" "}
-          </motion.div>
+          </div>
           <Carousel
             loop
             plugins={[autoplay.current]}
