@@ -38,10 +38,10 @@ const NavbarComponent = () => {
             <Button
               component={Link}
               href="/hello"
-              variant="light"
+              variant="outline"
               rightSection={<IconLogin size={16} />}
               color={colors.primary.DEFAULT}
-              className={`!text-primary-900`}
+              className={`!text-primary !bg-primary-50`}
             >
               {navbarComponent.ctaText1}
             </Button>
