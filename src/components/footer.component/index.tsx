@@ -1,3 +1,4 @@
+"use client";
 import { footerComponent } from "@/utils/content";
 import { Text } from "@mantine/core";
 import { IconBooks } from "@tabler/icons-react";

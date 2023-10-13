@@ -1,6 +1,3 @@
-"use client";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./globals.css";
 import type { Metadata } from "next";
 import "@mantine/core/styles.css";
@@ -10,9 +7,8 @@ import { Inter } from "next/font/google";
 import ScrollComponent from "@/components/scroll.component";
 import NavbarComponent from "@/components/navbar.component";
 import FooterComponent from "@/components/footer.component";
-import { useMouse } from "@mantine/hooks";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import BeeCursorFollowerComponent from "@/components/bee-cursor-follower.component";
+import AosInitWrapperComponent from "@/components/aos-init-wrapper.component";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,35 +22,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { ref, x, y } = useMouse();
-
-  AOS.init({
-    // Global settings:
-    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-    startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
-    initClassName: "aos-init", // class applied after initialization
-    animatedClassName: "aos-animate", // class applied on animation
-    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-
-    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-    offset: 120, // offset (in px) from the original trigger point
-    delay: 0, // values from 0 to 3000, with step 50ms
-    duration: 400, // values from 0 to 3000, with step 50ms
-    easing: "ease", // default easing for AOS animations
-    once: false, // whether animation should happen only once - while scrolling down
-    mirror: false, // whether elements should animate out while scrolling past them
-    anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
-  });
-
   return (
-    <html
-      ref={ref}
-      lang="en"
-      style={{ scrollBehavior: "smooth", overflowX: "hidden" }}
-    >
+    <html lang="en" style={{ scrollBehavior: "smooth", overflowX: "hidden" }}>
       <head>
         <ColorSchemeScript />
         <link
@@ -81,37 +50,15 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <MantineProvider>
           <main className="flex min-h-screen flex-col mx-auto items-center">
-            <motion.div
-              ref={ref}
-              className="box"
-              animate={{ x: x - 500, y: y - 10 }}
-              transition={{
-                type: "spring",
-                damping: 20,
-                stiffness: 30,
-                restDelta: 0.001,
-              }}
-              style={{
-                width: "100px",
-                height: "100px",
-                borderRadius: "50%",
-                position: "absolute",
-                zIndex: 20,
-              }}
-            >
-              {" "}
-              <Image
-                src={"/assets/gifs/bee.gif"}
-                alt="bee"
-                width={30}
-                height={30}
-              />{" "}
-            </motion.div>
-            <ScrollComponent>
-              <NavbarComponent />
-              {children}
-              <FooterComponent />
-            </ScrollComponent>
+            <AosInitWrapperComponent>
+              <BeeCursorFollowerComponent>
+                <ScrollComponent>
+                  <NavbarComponent />
+                  {children}
+                  <FooterComponent />
+                </ScrollComponent>
+              </BeeCursorFollowerComponent>
+            </AosInitWrapperComponent>
           </main>
         </MantineProvider>
       </body>
