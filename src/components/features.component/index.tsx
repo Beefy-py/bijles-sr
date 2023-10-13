@@ -1,19 +1,28 @@
+"use client";
+
 import { featuresComponent } from "@/utils/content";
 import { Button } from "@mantine/core";
 import { IconArrowBigRightLines } from "@tabler/icons-react";
 import { theme } from "@tailwindConfig";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import React from "react";
 
 const FeaturesComponent = () => {
   const { colors } = theme as any;
   return (
-    <section id="features" className="bg-white sm:py-16 lg:py-28">
+    <section
+      id="features"
+      className="bg-transparent sm:py-16 lg:py-40 relative"
+    >
       <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
         {featuresComponent.features.map((feat, index) => {
           return (
             <div
               key={index + feat.title}
-              className="group/card border z-10 rounded-lg bg-gray-50 border-gray-200 p-10 hover:border-primary transition flex flex-col justify-between items-start"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+              className="group/card border z-10 rounded-xl bg-gray-50 border-gray-200 p-10 hover:border-primary transition flex flex-col justify-between items-start"
             >
               <div className="content">
                 <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 group-hover/card:bg-primary/20 transition">
@@ -43,6 +52,31 @@ const FeaturesComponent = () => {
           );
         })}
       </div>
+      <div
+        data-aos="zoom-in-left"
+        data-aos-duration="3000"
+        className="absolute -z-10 h-[50rem] w-[50rem] rotate-45 -right-60 top-0"
+        style={{
+          backgroundImage: `url('/assets/images/blob.png')`,
+          backgroundSize: "cover", // You can adjust this to 'contain' or other values
+          backgroundPosition: "center", // You can adjust this if needed
+        }}
+      ></div>
+      <motion.div className="box absolute right-32 bottom-20 z-20 w-16 h-16 opacity-70">
+        <motion.img
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{
+            repeat: Infinity,
+            type: "tween",
+            duration: 2,
+            delay: 0.5,
+          }}
+          src={"/assets/images/subtract.png"}
+          alt="plus symbol image"
+          width={60}
+          height={60}
+        />
+      </motion.div>
     </section>
   );
 };
