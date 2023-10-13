@@ -99,10 +99,11 @@ const HeroComponent = () => {
               href="/hello"
               className="mt-2 group z-0 transition"
               variant="filled"
+              size="lg"
               color={colors.primary.DEFAULT}
             >
               {heroComponent.ctaText}
-            </Button>{" "}
+            </Button>
           </div>
         </motion.div>
         <div
