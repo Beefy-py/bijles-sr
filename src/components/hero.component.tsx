@@ -21,7 +21,7 @@ const HeroComponent = () => {
       id="home"
       className="mb-8 sm:mb-16 lg:mb-28 -mx-5 lg:-mx-10 xl:-mx-20 relative bg-secondary"
     >
-      <div className="box absolute left-32 top-32 z-20 w-24 h-24 opacity-70">
+      <div className="box absolute left-32 top-32 z-[2] w-24 h-24 opacity-70">
         <motion.img
           animate={{ scale: [1, 1.1, 1], y: [0, -15, 0] }}
           transition={{
@@ -37,7 +37,7 @@ const HeroComponent = () => {
         />{" "}
       </div>
       <motion.div
-        className="absolute -left-1/4 -top-1/4 z-2 bg-secondary-400 w-[50rem] h-[50rem] opacity-70"
+        className="absolute -left-1/4 -top-1/4 z-0 bg-secondary-400 w-[50rem] h-[50rem] opacity-70"
         animate={{ scale: [1, 1.05, 1] }}
         transition={{
           repeat: Infinity,
@@ -111,7 +111,7 @@ const HeroComponent = () => {
           className="right h-full p-6 col-span-6 flex items-center justify-center relative"
         >
           <motion.div
-            className="box absolute right-10 bottom-40 z-20 w-16 h-16 opacity-70"
+            className="box absolute right-10 bottom-40 z-[2] w-16 h-16 opacity-70"
             animate={{ scale: [1, 1.1, 1], x: [0, 15, 0] }}
             transition={{
               repeat: Infinity,
@@ -127,7 +127,7 @@ const HeroComponent = () => {
               height={30}
             />{" "}
           </motion.div>{" "}
-          <div className="box absolute right-32 -bottom-32 z-20 w-24 h-24 opacity-70">
+          <div className="box absolute right-32 -bottom-32 z-[2] w-24 h-24 opacity-70">
             <motion.img
               animate={{ rotate: [0, 45, 0] }}
               transition={{

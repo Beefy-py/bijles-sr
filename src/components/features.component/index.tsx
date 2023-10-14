@@ -62,7 +62,7 @@ const FeaturesComponent = () => {
           backgroundPosition: "center", // You can adjust this if needed
         }}
       ></div>
-      <motion.div className="box absolute right-32 bottom-20 z-20 w-16 h-16 opacity-70">
+      <motion.div className="box absolute right-32 bottom-20 z-[2] w-16 h-16 opacity-70">
         <motion.img
           animate={{ scale: [1, 1.2, 1] }}
           transition={{
