@@ -34,7 +34,7 @@ const HeroComponent = () => {
           alt="plus symbol image"
           width={80}
           height={80}
-        />{" "}
+        />
       </div>
       <motion.div
         className="absolute -left-1/4 -top-1/4 z-0 bg-secondary-400 w-[50rem] h-[50rem] opacity-70"

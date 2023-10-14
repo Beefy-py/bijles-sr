@@ -4,7 +4,7 @@ import CoursesComponent from "@/components/courses.component";
 
 export default function Home() {
   return (
-    <div className="body max-w-screen-2xl px-5 lg:px-10 xl:px-20">
+    <div className="body max-w-screen-2xl px-5 lg:px-10 xl:px-20 mx-auto overflow-x-hidden">
       <HeroComponent />
       <FeaturesComponent />
       <CoursesComponent />

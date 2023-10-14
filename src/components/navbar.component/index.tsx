@@ -23,7 +23,10 @@ const NavbarComponent = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`w-full z-20 fixed top-0`}
+      className={`z-20 fixed top-0`}
+      style={{
+        width: "inherit",
+      }}
     >
       <motion.nav
         className={`py-2.5 ${
