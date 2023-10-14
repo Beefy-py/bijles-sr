@@ -11,10 +11,14 @@ import { Image, Button, Text, Title } from "@mantine/core";
 import { heroComponent } from "@/utils/content";
 import classes from "@/styles/HeroComponent.module.css";
 import { motion } from "framer-motion";
+import { useViewportSize } from "@mantine/hooks";
 
 const HeroComponent = () => {
+  const { width } = useViewportSize();
   const autoplay = useRef(Autoplay({ delay: 5000 }));
   const { colors } = theme as any;
+
+  const isSmallerThanTabletScreen = width < 780;
 
   return (
     <section
@@ -79,16 +83,27 @@ const HeroComponent = () => {
         </g>
       </motion.svg>
       <div
-        className={`${classes.hero} grid grid-cols-12 py-20 px-5 lg:px-10 xl:px-20 items-center gap-20`}
+        className={`${classes.hero} grid grid-cols-12 py-20 px-5 lg:px-10 xl:px-20 items-center lg:gap-20`}
       >
         <motion.div
-          initial={{ x: -1000 }}
-          animate={{ x: 0 }}
-          className="left col-span-6"
+          initial={{
+            ...(isSmallerThanTabletScreen ? { y: -1000 } : { x: -1000 }),
+          }}
+          animate={{
+            ...(isSmallerThanTabletScreen ? { y: 0 } : { x: 0 }),
+          }}
+          className="col-span-full lg:col-span-6"
         >
-          <div className={`${classes.container}`}>
+          <div
+            className={`${classes.container} flex flex-col items-center lg:items-start`}
+          >
             <Title className={classes.title}>{heroComponent.title}</Title>
-            <Text className={classes.description} size="xl" mt="xl">
+            <Text
+              className={`${classes.description} text-center lg:text-left py-12`}
+              size="xl"
+              mt="xl"
+              mb="xl"
+            >
               {heroComponent.subTitle}
             </Text>
             <Button
@@ -107,8 +122,9 @@ const HeroComponent = () => {
           </div>
         </motion.div>
         <div
-          data-aos="fade-up-left"
-          className="right h-full p-6 col-span-6 flex items-center justify-center relative"
+          data-aos={isSmallerThanTabletScreen ? "zoom-in-up" : "fade-up-left"}
+          data-aos-offset={isSmallerThanTabletScreen ? "80" : "0"}
+          className="-mt-24 lg:-mt-0 h-full p-6 col-span-full lg:col-span-6 flex items-center justify-center relative"
         >
           <motion.div
             className="box absolute right-10 bottom-40 z-[2] w-16 h-16 opacity-70"

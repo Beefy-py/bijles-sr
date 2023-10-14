@@ -12,11 +12,6 @@
   padding-bottom: calc(var(--mantine-spacing-xl) * 6);
   z-index: 1;
   position: relative;
-
-  @media (max-width: var(--mantine-breakpoint-sm)) {
-    height: rem(500px);
-    padding-bottom: calc(var(--mantine-spacing-xl) * 3);
-  }
 }
 
 .title {
