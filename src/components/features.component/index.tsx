@@ -1,7 +1,7 @@
 "use client";
 
 import { featuresComponent } from "@/utils/content";
-import { Button } from "@mantine/core";
+import { Button, Title } from "@mantine/core";
 import { IconArrowBigRightLines } from "@tabler/icons-react";
 import { theme } from "@tailwindConfig";
 import { motion } from "framer-motion";
@@ -11,10 +11,13 @@ import React from "react";
 const FeaturesComponent = () => {
   const { colors } = theme as any;
   return (
-    <section
-      id="features"
-      className="bg-transparent sm:py-16 lg:py-40 relative"
-    >
+    <section id="features" className="bg-transparent py-16 lg:py-40 relative">
+      <h2
+        data-aos="zoom-in"
+        className="mb-6 font-bold text-xl lg:text-2xl text-center lg:text-left text-secondary-800"
+      >
+        Diensten
+      </h2>
       <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
         {featuresComponent.features.map((feat, index) => {
           return (
