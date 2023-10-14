@@ -7,7 +7,7 @@ function CoursePage() {
   return (
     <section className="py-20 grid grid-cols-1 lg:grid-cols-5 w-full px-5 md:px-10">
       <div className="intro col-span-2 p-2 rounded-lg">
-        <Title>Course Intro</Title>
+        <Title className="!font-cabin">Course Intro</Title>
         <Text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

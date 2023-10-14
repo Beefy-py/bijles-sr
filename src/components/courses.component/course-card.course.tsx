@@ -37,7 +37,7 @@ const CourseCardComponent = ({ course, courseIndex }: Props) => {
         className="w-full cursor-pointer hover:!border-secondary-800 !border transition group"
       >
         {/* <CourseCardImageCourseComponent /> */}
-        <Title className="group-hover:!text-secondary-800 transition">
+        <Title className="group-hover:!text-secondary-800 transition !font-cabin">
           {course.title}
         </Title>
 

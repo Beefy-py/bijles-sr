@@ -57,6 +57,10 @@ const config: Config = {
           "900": "#1554A3",
         },
       },
+      fontFamily: {
+        cabin: ["Cabin Sketch", "cursive"],
+        quicksand: ["Quicksand", "sans"],
+      },
     },
   },
   plugins: [],

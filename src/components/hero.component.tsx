@@ -97,7 +97,14 @@ const HeroComponent = () => {
           <div
             className={`${classes.container} flex flex-col items-center lg:items-start`}
           >
-            <Title className={classes.title}>{heroComponent.title}</Title>
+            <Title
+              className={
+                classes.title +
+                " !font-cabin font-extrabold text-3xl lg:!text-5xl"
+              }
+            >
+              {heroComponent.title}
+            </Title>
             <Text
               className={`${classes.description} text-center lg:text-left py-12`}
               size="xl"

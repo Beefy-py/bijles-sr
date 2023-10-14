@@ -33,7 +33,7 @@ const FeaturesComponent = () => {
                     "w-5 h-5 text-primary-600 group-hover/card:text-primary transition lg:w-6 lg:h-6"
                   )}
                 </div>
-                <h3 className="mb-2 text-xl font-bold hover:text-primary transition cursor-pointer">
+                <h3 className="mb-2 text-2xl font-bold font-cabin hover:text-primary transition cursor-pointer">
                   {feat.title}
                 </h3>
                 <p className="text-gray-500">{feat.description}</p>
