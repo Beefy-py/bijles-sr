@@ -20,7 +20,7 @@ const BeeCursorFollowerComponent = ({
       <motion.div
         ref={ref}
         className="box"
-        animate={{ x: x - 500, y: y - 10 }}
+        animate={{ x: x + 100, y: y - 50 }}
         transition={{
           type: "spring",
           damping: 20,
