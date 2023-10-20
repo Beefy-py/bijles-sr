@@ -60,7 +60,7 @@ const FeaturesComponent = () => {
         data-aos-duration="3000"
         className="absolute -z-10 h-[50rem] w-[50rem] rotate-45 -right-60 top-0"
         style={{
-          backgroundImage: `url('/assets/images/blob.png')`,
+          backgroundImage: `url('/images/blob.png')`,
           backgroundSize: "cover", // You can adjust this to 'contain' or other values
           backgroundPosition: "center", // You can adjust this if needed
         }}
@@ -74,7 +74,7 @@ const FeaturesComponent = () => {
             duration: 2,
             delay: 0.5,
           }}
-          src={"/assets/images/subtract.png"}
+          src={"/images/subtract.png"}
           alt="plus symbol image"
           width={60}
           height={60}

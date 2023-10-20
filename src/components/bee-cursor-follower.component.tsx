@@ -36,12 +36,7 @@ const BeeCursorFollowerComponent = ({
         }}
       >
         {" "}
-        <Image
-          src={"/assets/gifs/bee.gif"}
-          alt="bee"
-          width={30}
-          height={30}
-        />{" "}
+        <Image src={"/gifs/bee.gif"} alt="bee" width={30} height={30} />{" "}
       </motion.div>
       {children}
     </div>

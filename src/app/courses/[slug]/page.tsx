@@ -41,7 +41,7 @@ function CoursePage() {
                       <div className="relative w-5 h-5">
                         <Image
                           fill
-                          src={"/assets/images/gwap-logo.png"}
+                          src={"/images/gwap-logo.png"}
                           alt="Gwap logo"
                         />
                       </div>

@@ -9,14 +9,14 @@ body {
 /* Cabin Sketch */
 @font-face {
   font-family: "Cabin Sketch";
-  src: url("../../public/fonts/Cabin_Sketch/CabinSketch-Regular.ttf");
+  src: url("../assets/fonts/Cabin_Sketch/CabinSketch-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cabin Sketch";
-  src: url("../../public/fonts/Cabin_Sketch/CabinSketch-Bold.ttf");
+  src: url("../assets/fonts/Cabin_Sketch/CabinSketch-Bold.ttf");
   font-weight: bold;
   font-style: normal;
 }
@@ -26,7 +26,7 @@ body {
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 400;
-  src: url("../../public/fonts/Quicksand/static/Quicksand-Regular.ttf")
+  src: url("../assets/fonts/Quicksand/static/Quicksand-Regular.ttf")
     format("truetype");
 }
 
@@ -34,7 +34,7 @@ body {
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 300;
-  src: url("../../public/fonts/Quicksand/static/Quicksand-Light.ttf")
+  src: url("../assets/fonts/Quicksand/static/Quicksand-Light.ttf")
     format("truetype");
 }
 
@@ -42,7 +42,7 @@ body {
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 500;
-  src: url("../../public/fonts/Quicksand/static/Quicksand-Medium.ttf")
+  src: url("../assets/fonts/Quicksand/static/Quicksand-Medium.ttf")
     format("truetype");
 }
 
@@ -50,7 +50,7 @@ body {
   font-family: "Quicksand";
   font-style: normal;
   font-weight: bold;
-  src: url("../../public/fonts/Quicksand/static/Quicksand-Semibold.ttf")
+  src: url("../assets/fonts/Quicksand/static/Quicksand-Semibold.ttf")
     format("truetype");
 }
 
@@ -58,6 +58,6 @@ body {
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 900;
-  src: url("../../public/fonts/Quicksand/Quicksand-VariableFont_wght.ttf")
+  src: url("../assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf")
     format("truetype");
 }

@@ -34,7 +34,7 @@ const HeroComponent = () => {
             duration: 3,
             delay: 0.8,
           }}
-          src={"/assets/images/percentage.png"}
+          src={"/images/percentage.png"}
           alt="plus symbol image"
           width={80}
           height={80}
@@ -144,7 +144,7 @@ const HeroComponent = () => {
             }}
           >
             <Image
-              src={"/assets/images/equal-sign.png"}
+              src={"/images/equal-sign.png"}
               alt="plus symbol image"
               width={30}
               height={30}
@@ -159,7 +159,7 @@ const HeroComponent = () => {
                 duration: 1.5,
                 delay: 0.5,
               }}
-              src={"/assets/images/plus-math.png"}
+              src={"/images/plus-math.png"}
               alt="plus symbol image"
               width={80}
               height={80}

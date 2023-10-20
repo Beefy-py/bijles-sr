@@ -11,7 +11,7 @@ import {
 } from "@/icons";
 
 export const navbarComponent = {
-  logo: "/assets/images/logo.png",
+  logo: "/images/logo.png",
   ctaText1: "In Loggen",
   ctaText2: "Registreren",
   links: [
@@ -44,9 +44,9 @@ kinderen hebben die moeite hebben met bepaalde reken onderwerpen
 of zich willen verbeteren.`,
   ctaText: "Bekijk de Tutorials",
   imageSlider: [
-    { src: "/assets/images/studying-kid0.jpg", title: "First Image" },
-    { src: "/assets/images/studying-kid1.jpg", title: "Second Image" },
-    { src: "/assets/images/studying-kid2.jpg", title: "Third Image" },
+    { src: "/images/studying-kid0.jpg", title: "First Image" },
+    { src: "/images/studying-kid1.jpg", title: "Second Image" },
+    { src: "/images/studying-kid2.jpg", title: "Third Image" },
   ],
 };
 
@@ -76,7 +76,7 @@ export const featuresComponent = {
 export const tutorialsComponent = {
   tutorials: [
     {
-      image: "/assets/images/education.png",
+      image: "/images/education.png",
       durationInHours: 7,
       icon: (className: string) => circleNumber1(className),
       title: "Leerjaar 3",
@@ -88,7 +88,7 @@ export const tutorialsComponent = {
         "Sit amet nulla facilisi morbi tempus iaculis. Ac ut consequat semper viverra nam libero justo.",
     },
     {
-      image: "/assets/images/education.png",
+      image: "/images/education.png",
       durationInHours: 10,
       icon: (className: string) => circleNumber2(className),
       title: "Leerjaar 4",
@@ -100,7 +100,7 @@ export const tutorialsComponent = {
         "Et ligula ullamcorper malesuada proin libero nunc consequat interdum varius. ",
     },
     {
-      image: "/assets/images/education.png",
+      image: "/images/education.png",
       durationInHours: 3,
       icon: (className: string) => circleNumber3(className),
       title: "Leerjaar 5",
@@ -111,7 +111,7 @@ export const tutorialsComponent = {
       summary: "Fames ac turpis egestas sed tempus urna et.",
     },
     {
-      image: "/assets/images/education.png",
+      image: "/images/education.png",
       durationInHours: 8,
       icon: (className: string) => circleNumber4(className),
       title: "Leerjaar 6",
@@ -123,7 +123,7 @@ export const tutorialsComponent = {
         "Lorem mollis aliquam ut porttitor. Eget nulla facilisi etiam dignissim diam quis enim.",
     },
     {
-      image: "/assets/images/education.png",
+      image: "/images/education.png",
       durationInHours: 14,
       icon: (className: string) => circleNumber5(className),
       title: "Leerjaar 7",
@@ -135,7 +135,7 @@ export const tutorialsComponent = {
         "Tellus in hac habitasse platea dictumst vestibulum rhoncus est.",
     },
     {
-      image: "/assets/images/education.png",
+      image: "/images/education.png",
       durationInHours: 4,
       icon: (className: string) => circleNumber6(className),
       title: "Leerjaar 8",

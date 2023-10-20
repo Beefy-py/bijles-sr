@@ -30,7 +30,7 @@ const TutorialsComponent = () => {
           data-aos-duration="6000"
           className="absolute -z-10 h-[60rem] w-[60rem] rotate-45 -left-72 -top-20"
           style={{
-            backgroundImage: `url('/assets/images/blob2.png')`,
+            backgroundImage: `url('/images/blob2.png')`,
             backgroundSize: "cover", // You can adjust this to 'contain' or other values
             backgroundPosition: "center", // You can adjust this if needed
           }}
