@@ -1,20 +1,23 @@
 "use client";
 
-import { coursesComponent } from "@/utils/content";
-import CourseCardComponent from "./course-card.course";
+import { tutorialsComponent } from "@/utils/content";
+import CourseCardComponent from "./tutorial-card.course";
 
-const CoursesComponent = () => {
+const TutorialsComponent = () => {
   return (
     <>
-      <section id="courses" className="bg-transparent py-16 lg:py-40 relative">
+      <section
+        id="tutorials"
+        className="bg-transparent py-16 lg:py-40 relative"
+      >
         <h2
           data-aos="zoom-in"
           className="mb-6 font-bold text-xl lg:text-2xl text-center lg:text-left text-primary-700"
         >
-          Klassen
+          Tutorials
         </h2>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {coursesComponent.courses.map((course, index) => (
+          {tutorialsComponent.tutorials.map((course, index) => (
             <CourseCardComponent
               key={index + course.title}
               course={course}
@@ -37,4 +40,4 @@ const CoursesComponent = () => {
   );
 };
 
-export default CoursesComponent;
+export default TutorialsComponent;

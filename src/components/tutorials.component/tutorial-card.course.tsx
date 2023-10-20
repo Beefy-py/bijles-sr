@@ -14,7 +14,7 @@ import {
 } from "@mantine/core";
 import { IconAlarm, IconSchool, IconUser } from "@tabler/icons-react";
 import Link from "next/link";
-import CourseCardImageCourseComponent from "./course-card-image.course";
+import CourseCardImageCourseComponent from "./tutorial-card-image.course";
 import { theme } from "@tailwindConfig";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 
@@ -59,7 +59,7 @@ const CourseCardComponent = ({ course, courseIndex }: Props) => {
         <Group mt="md" gap="sm" grow>
           <Button
             // component={Link}
-            // href={`intro/courses/${course.title.toLowerCase()}`}
+            // href={`intro/tutorials/${course.title.toLowerCase()}`}
             onClick={open}
             variant="default"
             color={colors.tertiary.DEFAULT}
@@ -68,7 +68,7 @@ const CourseCardComponent = ({ course, courseIndex }: Props) => {
           </Button>
           <Button
             component={Link}
-            href={`/courses/${course.title.toLowerCase()}`}
+            href={`/tutorials/${course.title.toLowerCase()}`}
             variant="light"
             color={colors.tertiary.DEFAULT}
           >

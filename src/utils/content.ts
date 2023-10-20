@@ -24,8 +24,8 @@ export const navbarComponent = {
       path: "#features",
     },
     {
-      name: "Cursussen",
-      path: "#courses",
+      name: "Tutorials",
+      path: "#tutorials",
     },
     {
       name: "Contact",
@@ -35,12 +35,14 @@ export const navbarComponent = {
 };
 
 export const heroComponent = {
-  title: "1x24uur Rekenbijlessen",
-  subTitle: ` Samen met De Molen N.V. zorgen wij van Bijles.sr ervoor, dat alle
-            Surinaamse leerlingen op GLO niveau gratis rekenbijles kunnen
-            volgen. In de tussentijd breiden wij ons lesmateriaal uit ter
-            voorbereiding op het nieuw schooljaar.`,
-  ctaText: "Bekijk de Lessen",
+  title:
+    "Educatie en ontwikkeling zijn erg belangrijk voor een land als Suriname.",
+  subTitle: `Om een bijdrage te leveren aan deze ontwikkelingen heeft de Molen
+N.V met Bijles.sr de site gestart voor het Basisonderwijs. Bijles.sr is een
+ondersteuning aan onze hardwerkende leerkrachten en ouders die
+kinderen hebben die moeite hebben met bepaalde reken onderwerpen
+of zich willen verbeteren.`,
+  ctaText: "Bekijk de Tutorials",
   imageSlider: [
     { src: "/assets/images/studying-kid0.jpg", title: "First Image" },
     { src: "/assets/images/studying-kid1.jpg", title: "Second Image" },
@@ -71,13 +73,13 @@ export const featuresComponent = {
   ],
 };
 
-export const coursesComponent = {
-  courses: [
+export const tutorialsComponent = {
+  tutorials: [
     {
       image: "/assets/images/education.png",
       durationInHours: 7,
       icon: (className: string) => circleNumber1(className),
-      title: "Groep 1",
+      title: "Leerjaar 3",
       description: "",
       reviews: "",
       rating: 3,
@@ -89,7 +91,7 @@ export const coursesComponent = {
       image: "/assets/images/education.png",
       durationInHours: 10,
       icon: (className: string) => circleNumber2(className),
-      title: "Groep 2",
+      title: "Leerjaar 4",
       description: "",
       reviews: "",
       rating: 4,
@@ -101,7 +103,7 @@ export const coursesComponent = {
       image: "/assets/images/education.png",
       durationInHours: 3,
       icon: (className: string) => circleNumber3(className),
-      title: "Groep 3",
+      title: "Leerjaar 5",
       description: "",
       reviews: "",
       rating: 3,
@@ -112,7 +114,7 @@ export const coursesComponent = {
       image: "/assets/images/education.png",
       durationInHours: 8,
       icon: (className: string) => circleNumber4(className),
-      title: "Groep 4",
+      title: "Leerjaar 6",
       description: "",
       reviews: "",
       rating: 4.5,
@@ -124,7 +126,7 @@ export const coursesComponent = {
       image: "/assets/images/education.png",
       durationInHours: 14,
       icon: (className: string) => circleNumber5(className),
-      title: "Groep 5",
+      title: "Leerjaar 7",
       description: "",
       reviews: "",
       rating: 2.5,
@@ -136,7 +138,7 @@ export const coursesComponent = {
       image: "/assets/images/education.png",
       durationInHours: 4,
       icon: (className: string) => circleNumber6(className),
-      title: "Groep 6",
+      title: "Leerjaar 8",
       description: "",
       reviews: "",
       rating: 5,
