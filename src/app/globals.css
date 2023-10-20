@@ -7,7 +7,7 @@ body {
 }
 
 /* Cabin Sketch */
-@font-face {
+/* @font-face {
   font-family: "Cabin Sketch";
   src: url("../assets/fonts/Cabin_Sketch/CabinSketch-Regular.ttf");
   font-weight: normal;
@@ -19,10 +19,10 @@ body {
   src: url("../assets/fonts/Cabin_Sketch/CabinSketch-Bold.ttf");
   font-weight: bold;
   font-style: normal;
-}
+} */
 
 /* Quicksand fonts */
-@font-face {
+/* @font-face {
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 400;
@@ -60,4 +60,4 @@ body {
   font-weight: 900;
   src: url("../assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf")
     format("truetype");
-}
+} */
