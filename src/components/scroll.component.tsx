@@ -17,7 +17,7 @@ const ScrollComponent = ({ children }: { children: React.ReactNode }) => {
         <Transition transition="slide-up" mounted={scroll.y > 0}>
           {(transitionStyles) => (
             <Button
-              className="group transition"
+              className="group transition !bg-tertiary-500"
               leftSection={
                 <IconArrowBigUp
                   className="group-hover:animate-bounce"
