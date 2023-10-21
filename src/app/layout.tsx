@@ -4,9 +4,6 @@ import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import { Inter } from "next/font/google";
-import ScrollComponent from "@/components/scroll.component";
-import NavbarComponent from "@/components/navbar.component";
-import FooterComponent from "@/components/footer.component";
 import BeeCursorFollowerComponent from "@/components/bee-cursor-follower.component";
 import AosInitWrapperComponent from "@/components/aos-init-wrapper.component";
 
@@ -58,11 +55,7 @@ export default function RootLayout({
           <main className="flex min-h-screen flex-col mx-auto items-center">
             <AosInitWrapperComponent>
               <BeeCursorFollowerComponent>
-                <ScrollComponent>
-                  <NavbarComponent />
-                  {children}
-                  <FooterComponent />
-                </ScrollComponent>
+                {children}
               </BeeCursorFollowerComponent>
             </AosInitWrapperComponent>
           </main>
