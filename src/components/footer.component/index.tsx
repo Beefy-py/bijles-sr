@@ -6,11 +6,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import React from "react";
+import { useViewportSize } from "@mantine/hooks";
 
 const FooterComponent = () => {
+  const { width } = useViewportSize();
+  const isSmallScreen = width < 700;
+
   return (
     <motion.footer
-      initial={{ x: -400 }}
+      initial={{ x: isSmallScreen ? 0 : -400 }}
       whileInView={{ x: 0 }}
       className="bg-white w-full"
     >
