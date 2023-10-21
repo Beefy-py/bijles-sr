@@ -1,6 +1,13 @@
 "use client";
 
-import { Button, Divider, Menu, SimpleGrid, Text } from "@mantine/core";
+import {
+  Button,
+  Collapse,
+  Divider,
+  Menu,
+  SimpleGrid,
+  Text,
+} from "@mantine/core";
 import {
   IconBooks,
   IconChevronCompactDown,
@@ -25,6 +32,7 @@ import { motion } from "framer-motion";
 const NavbarComponent = () => {
   const [scroll] = useWindowScroll();
   const [opened, { toggle }] = useDisclosure();
+  const [navSubmenuOpened, { toggle: toggleNavSubmenu }] = useDisclosure(false);
   const { width } = useViewportSize();
   const scrolled = scroll.y > 40;
   // const textInvert = (670 < scroll.y && scroll.y < 930) || scroll.y < 100;
@@ -175,17 +183,80 @@ const NavbarComponent = () => {
                 </Menu.Dropdown>
               </Menu>
             </div>
-            <Burger
-              opened={opened}
-              onClick={toggle}
-              aria-label="Toggle navigation"
-              className={`lg:hidden`}
-            />
+
+            <Menu
+              width={200}
+              shadow="md"
+              position="bottom-end"
+              withArrow
+              arrowPosition="center"
+              transitionProps={{ transition: "pop-top-right", duration: 150 }}
+            >
+              <Menu.Target>
+                <Burger
+                  opened={opened}
+                  onClick={toggle}
+                  aria-label="Toggle navigation"
+                  className={`lg:hidden`}
+                  color={colors.tertiary.DEFAULT}
+                />
+              </Menu.Target>
+
+              <Menu.Dropdown>
+                {navbarComponent.links.map((link, index) => {
+                  return (
+                    <Menu.Item
+                      component={Link}
+                      href={`${link.path}`}
+                      className="text-lg hover:bg-tertiary-100 transition"
+                      key={index + link.name}
+                    >
+                      {link.name}
+                    </Menu.Item>
+                  );
+                })}
+                <div className="sm:hidden">
+                  <Menu.Divider />
+                  <Button
+                    component={Link}
+                    href="/hello"
+                    variant="subtle"
+                    rightSection={<IconLogin size={16} />}
+                    color={colors.primary.DEFAULT}
+                    className={`!text-primary !bg-primary-50 mb-1`}
+                  >
+                    {navbarComponent.ctaText1}
+                  </Button>
+                  <Button
+                    onClick={toggleNavSubmenu}
+                    color={colors.tertiary["300"]}
+                    className="!text-tertiary-900"
+                    variant="subtle"
+                    rightSection={<IconChevronDown size={16} />}
+                  >
+                    {navbarComponent.ctaText2}
+                  </Button>
+                  <Collapse in={navSubmenuOpened}>
+                    <Link
+                      href={"/"}
+                      className="flex flex-col items-start bg-tertiary-50 p-2 border-l-2 border-tertiary-500"
+                    >
+                      <h2 className="text-left text-tertiary-500 mb-3 text-base font-bold">
+                        Registreer met
+                      </h2>
+                      <Image
+                        src={"/images/gwap-logo-3.png"}
+                        alt="gwap logo"
+                        width={80}
+                        height={50}
+                      />
+                    </Link>
+                  </Collapse>
+                </div>
+              </Menu.Dropdown>
+            </Menu>
           </div>
-          <div
-            className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
-            id="mobile-menu-2"
-          >
+          <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               {navbarComponent.links.map((link, index) => (
                 <li key={index + link.name}>
