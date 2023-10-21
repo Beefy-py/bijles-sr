@@ -1,5 +1,5 @@
 import { navbarComponent } from "@/utils/content";
-import { Burger, Button, Collapse, Menu } from "@mantine/core";
+import { Burger, Button, Collapse, Menu, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconChevronDown, IconLogin } from "@tabler/icons-react";
 import { theme } from "@tailwindConfig";
@@ -40,31 +40,37 @@ const SmNavbarComponent = () => {
               className="text-lg hover:bg-tertiary-100 transition"
               key={index + link.name}
             >
-              {link.name}
+              <Text size="lg">{link.name}</Text>
             </Menu.Item>
           );
         })}
         <div className="sm:hidden">
           <Menu.Divider />
-          <Button
-            component={Link}
-            href="/hello"
-            variant="subtle"
-            rightSection={<IconLogin size={16} />}
-            color={colors.primary.DEFAULT}
-            className={`!text-primary !bg-primary-50 mb-1`}
-          >
-            {navbarComponent.ctaText1}
-          </Button>
-          <Button
-            onClick={toggleNavSubmenu}
-            color={colors.tertiary["300"]}
-            className="!text-tertiary-900"
-            variant="subtle"
-            rightSection={<IconChevronDown size={16} />}
-          >
-            {navbarComponent.ctaText2}
-          </Button>
+          <Menu.Item closeMenuOnClick={false}>
+            <Button
+              component={Link}
+              href="/hello"
+              variant="subtle"
+              rightSection={<IconLogin size={16} />}
+              color={colors.primary.DEFAULT}
+              className={`!text-primary !bg-primary-50 !p-0 !h-[1.5rem]`}
+              size="lg"
+            >
+              {navbarComponent.ctaText1}
+            </Button>
+          </Menu.Item>
+          <Menu.Item closeMenuOnClick={false}>
+            <Button
+              onClick={toggleNavSubmenu}
+              color={colors.tertiary["300"]}
+              className="!text-tertiary-900 !p-0 !h-[1.5rem] pb-1"
+              variant="subtle"
+              rightSection={<IconChevronDown size={16} />}
+              size="lg"
+            >
+              {navbarComponent.ctaText2}
+            </Button>
+          </Menu.Item>
           <Collapse in={navSubmenuOpened}>
             <Link
               href={"/"}
