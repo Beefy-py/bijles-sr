@@ -33,10 +33,10 @@ const BeeCursorFollowerComponent = ({
           borderRadius: "50%",
           position: "absolute",
           zIndex: 20,
+          cursor: "grab",
         }}
       >
-        {" "}
-        <Image src={"/gifs/bee.gif"} alt="bee" width={30} height={30} />{" "}
+        <Image src={"/gifs/bee.gif"} alt="bee" width={30} height={30} />
       </motion.div>
       {children}
     </div>
