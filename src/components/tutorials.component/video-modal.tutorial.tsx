@@ -1,7 +1,7 @@
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import { Modal, Button } from "@mantine/core";
 
-export default function CourseVideoModalComponent() {
+export default function TutorialVideoModalComponent() {
   const [opened, { open, close }] = useDisclosure(false);
   const isMobile = useMediaQuery("(max-width: 50em)");
 

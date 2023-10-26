@@ -14,16 +14,15 @@ import {
 } from "@mantine/core";
 import { IconAlarm, IconSchool, IconUser } from "@tabler/icons-react";
 import Link from "next/link";
-import CourseCardImageCourseComponent from "./tutorial-card-image.course";
 import { theme } from "@tailwindConfig";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 
 type Props = {
-  course: any;
-  courseIndex: number;
+  tutorial: any;
+  tutorialIndex: number;
 };
 
-const CourseCardComponent = ({ course, courseIndex }: Props) => {
+const TutorialCardComponent = ({ tutorial, tutorialIndex }: Props) => {
   const { colors } = theme as any;
   const [opened, { open, close }] = useDisclosure(false);
 
@@ -32,34 +31,34 @@ const CourseCardComponent = ({ course, courseIndex }: Props) => {
       <Card
         withBorder
         data-aos="fade-up"
-        data-aos-delay={courseIndex * 200}
+        data-aos-delay={tutorialIndex * 200}
         radius="md"
         className="w-full cursor-pointer hover:!border-secondary-800 !border transition group"
       >
-        {/* <CourseCardImageCourseComponent /> */}
+        {/* <TutorialCardImageTutorialComponent /> */}
         <Title className="group-hover:!text-secondary-800 transition !font-cabin">
-          {course.title}
+          {tutorial.title}
         </Title>
 
         <Group justify="space-between" mt="md" mb="xs">
           <Group>
             <div>Beoordeling:</div>
-            <Rating fractions={4} value={course.rating} readOnly />
+            <Rating fractions={4} value={tutorial.rating} readOnly />
           </Group>
           <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded">
             <IconSchool className="w-4 h-4 mr-1" />
-            {course.durationInHours} uren
+            {tutorial.durationInHours} uren
           </span>
         </Group>
 
         <Text size="sm" c="dimmed">
-          {course.summary}
+          {tutorial.summary}
         </Text>
 
         <Group mt="md" gap="sm" grow>
           <Button
             // component={Link}
-            // href={`intro/tutorials/${course.title.toLowerCase()}`}
+            // href={`intro/tutorials/${tutorial.title.toLowerCase()}`}
             onClick={open}
             variant="default"
             color={colors.tertiary.DEFAULT}
@@ -68,7 +67,7 @@ const CourseCardComponent = ({ course, courseIndex }: Props) => {
           </Button>
           <Button
             component={Link}
-            href={`/tutorials/${course.title.toLowerCase()}`}
+            href={`/tutorials/${tutorial.title.toLowerCase()}`}
             variant="light"
             color={colors.tertiary.DEFAULT}
           >
@@ -79,7 +78,7 @@ const CourseCardComponent = ({ course, courseIndex }: Props) => {
       <Modal
         opened={opened}
         onClose={close}
-        title="Course Intro Video"
+        title="Tutorial Intro Video"
         centered
         size="xl"
       >
@@ -95,4 +94,4 @@ const CourseCardComponent = ({ course, courseIndex }: Props) => {
   );
 };
 
-export default CourseCardComponent;
+export default TutorialCardComponent;

@@ -1,7 +1,7 @@
 "use client";
 
 import { tutorialsComponent } from "@/utils/content";
-import CourseCardComponent from "./tutorial-card.course";
+import TutorialCardComponent from "./tutorial-card.tutorial";
 
 const TutorialsComponent = () => {
   return (
@@ -17,11 +17,11 @@ const TutorialsComponent = () => {
           Tutorials
         </h2>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {tutorialsComponent.tutorials.map((course, index) => (
-            <CourseCardComponent
-              key={index + course.title}
-              course={course}
-              courseIndex={index}
+          {tutorialsComponent.tutorials.map((tutorial, index) => (
+            <TutorialCardComponent
+              key={index + tutorial.title}
+              tutorial={tutorial}
+              tutorialIndex={index}
             />
           ))}
         </div>
