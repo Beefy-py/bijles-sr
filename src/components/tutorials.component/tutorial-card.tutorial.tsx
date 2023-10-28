@@ -1,7 +1,16 @@
 "use client";
 
 import React from "react";
-import { Group, Modal, Rating, Card, Text, Button, Title } from "@mantine/core";
+import {
+  Group,
+  Modal,
+  Rating,
+  Card,
+  Text,
+  Button,
+  Title,
+  Loader,
+} from "@mantine/core";
 import { IconSchool } from "@tabler/icons-react";
 import Link from "next/link";
 import { theme } from "@tailwindConfig";
@@ -85,7 +94,9 @@ const TutorialCardComponent = ({ tutorial, tutorialIndex }: Props) => {
       >
         <div className="max-h-screen h-full w-full">
           {videoLoading ? (
-            "loading"
+            <div className="h-96 flex items-center justify-center">
+              <Loader color={colors.primary.DEFAULT} size="xl" type="bars" />
+            </div>
           ) : (
             <ReactPlayer
               className="react-player h-screen"
