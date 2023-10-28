@@ -1,21 +1,14 @@
 "use client";
 
 import React from "react";
-import {
-  Group,
-  Modal,
-  Rating,
-  Card,
-  Image,
-  Text,
-  Badge,
-  Button,
-  Title,
-} from "@mantine/core";
-import { IconAlarm, IconSchool, IconUser } from "@tabler/icons-react";
+import { Group, Modal, Rating, Card, Text, Button, Title } from "@mantine/core";
+import { IconSchool } from "@tabler/icons-react";
 import Link from "next/link";
 import { theme } from "@tailwindConfig";
-import { useDisclosure, useMediaQuery } from "@mantine/hooks";
+import { useDisclosure } from "@mantine/hooks";
+import slugify from "slugify";
+import { useGetTutorialIntroVideo } from "@/queries/video-lessons";
+import ReactPlayer from "react-player/vimeo";
 
 type Props = {
   tutorial: any;
@@ -25,6 +18,16 @@ type Props = {
 const TutorialCardComponent = ({ tutorial, tutorialIndex }: Props) => {
   const { colors } = theme as any;
   const [opened, { open, close }] = useDisclosure(false);
+
+  const slugifiedTutorialTitle = slugify(tutorial.title, { lower: true });
+
+  const { data: videoData, isLoading: videoLoading } = useGetTutorialIntroVideo(
+    slugifiedTutorialTitle,
+    {
+      enabled: opened,
+    }
+  );
+  console.log(videoData, videoLoading);
 
   return (
     <>
@@ -57,8 +60,6 @@ const TutorialCardComponent = ({ tutorial, tutorialIndex }: Props) => {
 
         <Group mt="md" gap="sm" grow>
           <Button
-            // component={Link}
-            // href={`intro/tutorials/${tutorial.title.toLowerCase()}`}
             onClick={open}
             variant="default"
             color={colors.tertiary.DEFAULT}
@@ -67,7 +68,7 @@ const TutorialCardComponent = ({ tutorial, tutorialIndex }: Props) => {
           </Button>
           <Button
             component={Link}
-            href={`/tutorials/${tutorial.title.toLowerCase()}`}
+            href={`/tutorials/${slugifiedTutorialTitle}`}
             variant="light"
             color={colors.tertiary.DEFAULT}
           >
@@ -82,13 +83,20 @@ const TutorialCardComponent = ({ tutorial, tutorialIndex }: Props) => {
         centered
         size="xl"
       >
-        <video
-          className="w-full h-auto max-w-full border border-gray-200 rounded-lg"
-          controls
-        >
-          <source src="/docs/videos/flowbite.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="max-h-screen h-full w-full">
+          {videoLoading ? (
+            "loading"
+          ) : (
+            <ReactPlayer
+              className="react-player h-screen"
+              url={videoData.link}
+              controls={true}
+              playing={true}
+              loop={true}
+              width={"100%"}
+            />
+          )}
+        </div>
       </Modal>
     </>
   );

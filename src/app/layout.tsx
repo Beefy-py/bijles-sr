@@ -6,6 +6,7 @@ import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import { Inter } from "next/font/google";
 import BeeCursorFollowerComponent from "@/components/bee-cursor-follower.component";
 import AosInitWrapperComponent from "@/components/aos-init-wrapper.component";
+import TanstackQueryWrapperComponent from "@/components/queries-wrapper.component";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -54,9 +55,11 @@ export default function RootLayout({
         <MantineProvider>
           <main className="flex min-h-screen flex-col mx-auto items-center">
             <AosInitWrapperComponent>
-              <BeeCursorFollowerComponent>
-                {children}
-              </BeeCursorFollowerComponent>
+              <TanstackQueryWrapperComponent>
+                <BeeCursorFollowerComponent>
+                  {children}
+                </BeeCursorFollowerComponent>
+              </TanstackQueryWrapperComponent>
             </AosInitWrapperComponent>
           </main>
         </MantineProvider>
