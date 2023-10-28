@@ -18,6 +18,7 @@ import { useDisclosure } from "@mantine/hooks";
 import slugify from "slugify";
 import { useGetTutorialIntroVideo } from "@/queries/video-lessons";
 import ReactPlayer from "react-player/vimeo";
+import { useRouter } from "next/navigation";
 
 type Props = {
   tutorial: any;
@@ -25,6 +26,7 @@ type Props = {
 };
 
 const TutorialCardComponent = ({ tutorial, tutorialIndex }: Props) => {
+  const router = useRouter();
   const { colors } = theme as any;
   const [opened, { open, close }] = useDisclosure(false);
 
@@ -46,6 +48,7 @@ const TutorialCardComponent = ({ tutorial, tutorialIndex }: Props) => {
         data-aos-delay={tutorialIndex * 200}
         radius="md"
         className="w-full cursor-pointer hover:!border-secondary-800 !border transition group"
+        onClick={() => router.push(`/tutorials/${slugifiedTutorialTitle}`)}
       >
         {/* <TutorialCardImageTutorialComponent /> */}
         <Title className="group-hover:!text-secondary-800 transition !font-cabin">
@@ -80,6 +83,7 @@ const TutorialCardComponent = ({ tutorial, tutorialIndex }: Props) => {
             href={`/tutorials/${slugifiedTutorialTitle}`}
             variant="light"
             color={colors.tertiary.DEFAULT}
+            className="hover:bg-tertiary-100 transition"
           >
             Meer Info
           </Button>
