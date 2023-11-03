@@ -1,7 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? "/api";
+const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+const axiosInstance = axios.create({
+  baseURL: apiBaseUrl,
+});
 
 export function useGetTutorialIntroVideo(
   tutorialSlug: string,
@@ -27,10 +31,13 @@ export function useGetTutorialLessonVideos(
     ["GetTutorialLessonVideos"],
     () =>
       axios
-        .get<any>(`api/videos/lessons/${tutorialSlug}`, {
+        .get<any>(`/api/videos/lessons/${"leerjaar-4"}`, {
           withCredentials: true,
         })
-        .then((res) => res.data),
+        .then((res) => {
+          console.log("RESULT", res);
+          return res.data;
+        }),
     { ...options }
   );
 }
