@@ -44,9 +44,15 @@ kinderen hebben die moeite hebben met bepaalde reken onderwerpen
 of zich willen verbeteren.`,
   ctaText: "Bekijk de Tutorials",
   imageSlider: [
-    { src: "/images/studying-kid0.jpg", title: "First Image" },
-    { src: "/images/studying-kid1.jpg", title: "Second Image" },
-    { src: "/images/studying-kid2.jpg", title: "Third Image" },
+    { src: "/images/kid1.png", title: "Kid at school looking at a tablet" },
+    {
+      src: "/images/kids1.png",
+      title: "Two Kids at school looking at a tablet",
+    },
+    {
+      src: "/images/kids2.png",
+      title: "Three Kids at school looking at a tablet",
+    },
   ],
 };
 
