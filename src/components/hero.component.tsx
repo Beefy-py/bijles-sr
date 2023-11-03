@@ -40,6 +40,8 @@ const HeroComponent = () => {
           height={80}
         />
       </div>
+
+      {/*Pulsing Circle */}
       <motion.div
         className="absolute -left-1/4 -top-1/4 z-0 bg-secondary-400 w-[50rem] h-[50rem] opacity-70"
         animate={{ scale: [1, 1.05, 1] }}
@@ -53,8 +55,10 @@ const HeroComponent = () => {
           borderRadius: "50%",
         }}
       />
+
+      {/*Dotted Circle */}
       <motion.svg
-        className="absolute right-0 bottom-0 z-2 w-[30rem] h-[30rem] fill-secondary-700"
+        className="absolute top-1/4 lg:top-auto lg:right-0 lg:bottom-0 z-2 w-[30rem] h-[30rem] fill-secondary-700"
         viewBox="0 0 1000 1000"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -105,6 +109,72 @@ const HeroComponent = () => {
             >
               {heroComponent.title}
             </Title>
+            {/* Carousel for smaller screens */}
+            <div
+              data-aos={
+                isSmallerThanTabletScreen ? "zoom-in-up" : "fade-up-left"
+              }
+              data-aos-offset={isSmallerThanTabletScreen ? "80" : "0"}
+              className="lg:hidden h-full p-6 flex items-center justify-center relative"
+            >
+              <motion.div
+                className="box absolute left-5 sm:left-10 top-40 z-[2] w-10 h-10 sm:w-16 sm:h-16 opacity-70"
+                animate={{ scale: [1, 1.1, 1], x: [0, 15, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  type: "tween",
+                  duration: 4,
+                  delay: 0.5,
+                }}
+              >
+                <Image
+                  src={"/images/equal-sign.png"}
+                  alt="plus symbol image"
+                  width={30}
+                  height={30}
+                />{" "}
+              </motion.div>
+              <div className="box absolute left-1/4 -bottom-10 sm:bottom-10 z-[2] w-16 h-16 sm:w-24 sm:h-24 opacity-70">
+                <motion.img
+                  animate={{ rotate: [0, 45, 0] }}
+                  transition={{
+                    repeat: Infinity,
+                    type: "tween",
+                    duration: 1.5,
+                    delay: 0.5,
+                  }}
+                  src={"/images/plus-math.png"}
+                  alt="plus symbol image"
+                  width={80}
+                  height={80}
+                />{" "}
+              </div>
+              <Carousel
+                loop
+                plugins={[autoplay.current]}
+                className="hero-slider w-3/4 md:w-1/2"
+                styles={{
+                  viewport: {
+                    borderRadius: "50%",
+                    // width: "40vw",
+                    // height: "40vh",
+                  },
+                }}
+                withControls={false}
+              >
+                {heroComponent.imageSlider.map((img, index) => (
+                  <Carousel.Slide key={index + img.title}>
+                    <Image
+                      radius="lg"
+                      w="auto"
+                      fit="contain"
+                      src={img.src}
+                      alt={img.title}
+                    />
+                  </Carousel.Slide>
+                ))}
+              </Carousel>
+            </div>
             <Text
               className={`${classes.description} text-center lg:text-left py-12`}
               size="xl"
@@ -127,11 +197,12 @@ const HeroComponent = () => {
               {heroComponent.ctaText}
             </Button>
           </div>
-        </motion.div>
+        </motion.div>{" "}
+        {/* Carousel for larger screens */}
         <div
           data-aos={isSmallerThanTabletScreen ? "zoom-in-up" : "fade-up-left"}
           data-aos-offset={isSmallerThanTabletScreen ? "80" : "0"}
-          className="-mt-24 lg:-mt-0 h-full p-6 col-span-full lg:col-span-6 flex items-center justify-center relative"
+          className="hidden lg:flex -mt-24 lg:-mt-0 h-full p-6 col-span-full lg:col-span-6 items-center justify-center relative"
         >
           <motion.div
             className="box absolute right-10 bottom-40 z-[2] w-16 h-16 opacity-70"
@@ -192,6 +263,7 @@ const HeroComponent = () => {
           </Carousel>
         </div>
       </div>
+      {/*Wave*/}
       <svg
         className="absolute"
         xmlns="http://www.w3.org/2000/svg"
