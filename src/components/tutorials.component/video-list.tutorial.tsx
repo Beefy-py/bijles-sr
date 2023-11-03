@@ -9,7 +9,7 @@ import { useViewportSize } from "@mantine/hooks";
 const VideoListComponent = () => {
   const { width } = useViewportSize();
   const pathname = usePathname();
-  const tutorialSlug = pathname.split("/")[0];
+  const tutorialSlug = pathname.split("/")[2];
 
   const { data: videosData, isLoading } =
     useGetTutorialLessonVideos(tutorialSlug);

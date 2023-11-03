@@ -31,7 +31,7 @@ export function useGetTutorialLessonVideos(
     ["GetTutorialLessonVideos"],
     () =>
       axios
-        .get<any>(`/api/videos/lessons/${"leerjaar-4"}`, {
+        .get<any>(`/api/videos/lessons/${tutorialSlug}`, {
           withCredentials: true,
         })
         .then((res) => {
