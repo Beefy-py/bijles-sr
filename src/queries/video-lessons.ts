@@ -35,7 +35,6 @@ export function useGetTutorialLessonVideos(
           withCredentials: true,
         })
         .then((res) => {
-          console.log("RESULT", res);
           return res.data;
         }),
     { ...options }

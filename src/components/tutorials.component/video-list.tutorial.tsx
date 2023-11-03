@@ -14,8 +14,6 @@ const VideoListComponent = () => {
   const { data: videosData, isLoading } =
     useGetTutorialLessonVideos(tutorialSlug);
 
-  console.log(videosData);
-
   return (
     <div>
       {isLoading ? (

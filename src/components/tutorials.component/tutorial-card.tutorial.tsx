@@ -38,7 +38,6 @@ const TutorialCardComponent = ({ tutorial, tutorialIndex }: Props) => {
       enabled: opened,
     }
   );
-  console.log(videoData, videoLoading);
 
   return (
     <>
