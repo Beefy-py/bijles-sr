@@ -4,7 +4,10 @@ import TutorialsComponent from "@/components/tutorials.component";
 
 export default function Home() {
   return (
-    <div className="body max-w-screen-2xl px-5 lg:px-10 xl:px-20 mx-auto overflow-hidden">
+    <div
+      id="page-body"
+      className="max-w-screen-2xl px-5 lg:px-10 xl:px-20 mx-auto overflow-hidden"
+    >
       <HeroComponent />
       <FeaturesComponent />
       <TutorialsComponent />

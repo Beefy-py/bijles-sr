@@ -6,6 +6,12 @@ body {
   font-family: "Quicksand", sans-serif !important;
 }
 
+@media screen and (min-width: 2560px) {
+  #page-body,
+  #navbar {
+    max-width: unset;
+  }
+}
 /* Cabin Sketch */
 /* @font-face {
   font-family: "Cabin Sketch";
