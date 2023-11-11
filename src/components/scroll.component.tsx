@@ -13,22 +13,20 @@ const ScrollComponent = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       {children}
-      <Affix position={{ bottom: 20, right: 20 }}>
+      <Affix position={{ bottom: 50, right: 20 }}>
         <Transition transition="slide-up" mounted={scroll.y > 0}>
           {(transitionStyles) => (
             <Button
-              className="group transition !bg-tertiary-500"
-              leftSection={
-                <IconArrowBigUp
-                  className="group-hover:animate-bounce"
-                  style={{ width: rem(16), height: rem(16) }}
-                />
-              }
+              className="group transition !bg-tertiary-500 hover:!bg-tertiary-700"
               style={transitionStyles}
               onClick={() => scrollTo({ y: 0 })}
               color={colors.tertiary.DEFAULT}
+              p={10}
             >
-              Naar Boven
+              <IconArrowBigUp
+                className="group-hover:animate-pulse z-10"
+                style={{ width: rem(16), height: rem(16) }}
+              />
             </Button>
           )}
         </Transition>
