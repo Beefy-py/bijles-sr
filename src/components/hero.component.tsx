@@ -110,13 +110,7 @@ const HeroComponent = () => {
               {heroComponent.title}
             </Title>
             {/* Carousel for smaller screens */}
-            <div
-              data-aos={
-                isSmallerThanTabletScreen ? "zoom-in-up" : "fade-up-left"
-              }
-              data-aos-offset={isSmallerThanTabletScreen ? "80" : "0"}
-              className="lg:hidden h-full p-6 flex items-center justify-center relative"
-            >
+            <div className="lg:hidden h-full p-6 flex items-center justify-center relative">
               <motion.div
                 className="box absolute left-5 sm:left-10 top-40 z-[2] w-10 h-10 sm:w-16 sm:h-16 opacity-70"
                 animate={{ scale: [1, 1.1, 1], x: [0, 15, 0] }}
@@ -199,11 +193,7 @@ const HeroComponent = () => {
           </div>
         </motion.div>{" "}
         {/* Carousel for larger screens */}
-        <div
-          data-aos={isSmallerThanTabletScreen ? "zoom-in-up" : "fade-up-left"}
-          data-aos-offset={isSmallerThanTabletScreen ? "80" : "0"}
-          className="hidden lg:flex -mt-24 lg:-mt-0 h-full p-6 col-span-full lg:col-span-6 items-center justify-center relative"
-        >
+        <div className="hidden lg:flex -mt-24 lg:-mt-0 h-full p-6 col-span-full lg:col-span-6 items-center justify-center relative">
           <motion.div
             className="box absolute right-10 bottom-40 z-[2] w-16 h-16 opacity-70"
             animate={{ scale: [1, 1.1, 1], x: [0, 15, 0] }}
@@ -243,8 +233,6 @@ const HeroComponent = () => {
             styles={{
               viewport: {
                 borderRadius: "50%",
-                // width: "40vw",
-                // height: "40vh",
               },
             }}
             withControls={false}
