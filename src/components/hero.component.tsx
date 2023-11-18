@@ -233,6 +233,7 @@ const HeroComponent = () => {
             styles={{
               viewport: {
                 borderRadius: "50%",
+                maxWidth: "1000px",
               },
             }}
             withControls={false}
