@@ -18,7 +18,7 @@ const FooterComponent = () => {
       whileInView={{ x: 0 }}
       className="bg-white w-full"
     >
-      <div className="mx-auto max-w-screen-xl px-5 lg:px-10 xl:px-20">
+      <div className="mx-auto px-5 lg:px-10 xl:px-20">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <Link href="/" className="flex w-14 h-14 relative">

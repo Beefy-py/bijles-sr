@@ -31,7 +31,7 @@ const NavbarComponent = () => {
         id="navbar"
         className={`py-2.5 ${
           scrolled ? "bg-secondary-700 py-1" : ""
-        } transition duration-500 max-w-screen-2xl mx-auto px-5 lg:px-10 xl:px-20`}
+        } transition duration-500 mx-auto px-5 lg:px-10 xl:px-20`}
       >
         <div className={`flex flex-wrap justify-between items-center mx-auto`}>
           <Link href="/" className="flex w-16 h-16 relative">
