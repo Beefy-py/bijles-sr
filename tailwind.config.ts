@@ -61,6 +61,12 @@ const config: Config = {
         cabin: ["Cabin Sketch", "cursive"],
         quicksand: ["Quicksand", "sans"],
       },
+      screens: {
+        "3xl": "2000px",
+        "4xl": "2560px",
+        "5xl": "3200px",
+        "6xl": "3840px",
+      },
     },
   },
   plugins: [],
