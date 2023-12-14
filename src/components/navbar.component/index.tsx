@@ -17,7 +17,6 @@ const NavbarComponent = () => {
   const [scroll] = useWindowScroll();
   const scrolled = scroll.y > 40;
   const { colors } = theme as any;
-
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -42,7 +41,8 @@ const NavbarComponent = () => {
             <div className="buttons hidden sm:block">
               <Button
                 component={Link}
-                href="/hello"
+                href={`${process.env.NEXT_PUBLIC_GWAP_CMS_BASE_URL}/redirect?client_id=${process.env.NEXT_PUBLIC_GWAP_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_GWAP_REDIRECT_URI}`}
+                replace
                 variant="outline"
                 rightSection={<IconLogin size={16} />}
                 color={colors.primary.DEFAULT}
